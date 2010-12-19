@@ -58,7 +58,7 @@ Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obi
 ----
 
 || Numer typu || *0* ||
-|| Nazwa typu || *Business* ||
+|| Nazwa typu || *`Business`* ||
 
 ----
 
@@ -98,7 +98,7 @@ Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obi
 ----
 
 || Numer typu || *51* ||
-|| Nazwa typu || *AdvertProximity* ||
+|| Nazwa typu || *`AdvertProximity`* ||
 
 ----
 
@@ -108,4 +108,3 @@ Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obi
 || longtitude || 	Double	|| Długość geograficzna środka promocji || 
 || radius || 	Long || 	Promień funkcjonowania recenzji (w metrach) || 
 || city	|| String || 	Miasto z którego zostały wybrane reklamy || 
-
