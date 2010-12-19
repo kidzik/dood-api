@@ -1,3 +1,5 @@
 #summary Test scenarios for dood-api.
 
 = Test Cases =
+
+  * [TestCasesAuthRegist Test Cases for Authentication, Registration and Session Control]
