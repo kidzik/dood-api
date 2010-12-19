@@ -81,6 +81,8 @@ Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obi
 || _weight_	|| Double || Waga businessu. (defaultowo 0) skala 0-1 || 
 || _categories_	|| `List<Long>` || List ID-ków kategorii. String z CSV idków || 
 
+  * Brak pola total_reviews lub total_adverts oznacza brak jakichkolwiek recenzji bądź promocji (odpowiednio). W takiej sytuacji pole reviews oraz adverts i advert mogą nie być w ogóle czytane. Reklama (promocja) frontowa jest też częścią listy promocji.
+
 ==Business Short==
 
 || name || String || Nazwa businessu || 
@@ -91,6 +93,17 @@ Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obi
 || _advert_ || String || Tekst reklamy frontowej (max 160 znaków) || 
 || advert_date_ ||  Long || Data wygaśnięcia reklamy (ms. od 1.01.1970) || 
 || _weight_ || Int || Waga businessu. (defaultowo 0) || 
+
+
+  * Business Short jest tak naprawdę obiektem Business jednak w założeniu nie ma wszystkich danych które może mieć pełen obiekt Business. Jedyna różnica to polega na tym że klient może explicite poprosić o obiekt w okrojonej wersji (BusinessShort) poprzez dodanie flagi short=yes. Dodatkowo klient powinien wykrywać czy posiada wersje Short czy pełną. Obecność dowolnego pola nienależącego jedynie do wersji Short oznacza że dany obiekt jest w wersji pełnej (Business).
+
+  * Nagłówek jest IDENTYCZNY jak nagłówek odpowiadającego obiektu typu Business. (to jest ten sam obiekt)
+
+  * Jest to krótsza wersja obiektu business potrzebna w celu szybkiego prezentowania krótkiej reklamy (np. w widgetach lub listach businessów)
+
+  * Klient powinien płynnie dostosować się do tych zmian w typie przesyłanych danych. Tzn jeśli prosi o obiekt short a dostanie pełen obiekt powinien rozpoznać go jako pełen obiekt. 
+
+  * Przy braku pola advert_date w sytuacji gdy obecne jest pole advert to klient sam podejmuje decyzje o czasie wyświetlania reklamy. Możliwym sposobem jest pamiętanie ostatniego czasu synchronizacji każdego obiektu i ustalenie arbitralnie maksymalnego czasu promocji w przypadku braku pola advert_date. Serwer natomiast powinien zadbać by pole advert_date było dostępne w przypadku wystąpienia pola advert.
 
 
 ==Proximity Advertisement==
@@ -108,3 +121,5 @@ Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obi
 || longtitude || 	Double	|| Długość geograficzna środka promocji || 
 || radius || 	Long || 	Promień funkcjonowania recenzji (w metrach) || 
 || city	|| String || 	Miasto z którego zostały wybrane reklamy || 
+
+  * Należy zwrócić uwagę, że pole businesses nie ma pola total_businesses. Przesyłamy od razu wszystkie obiekty na raz i nie można dopytać się o pozostałe obiekty na liście.
