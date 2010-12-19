@@ -9,13 +9,13 @@ Starts session.
 None
 
 *Returns:*
-1 ApiSession structure.
+1 `ApiSession` structure.
 
-*ApiSession*
+*`ApiSession`*
 || *field* || *type* || *description* ||
-|| photo_server || string || URL of server with photos ||
-|| key || string || API key ||
-|| id || string || API key ||
+|| `photo_server` || `String` || URL of server with photos ||
+|| `key` || `String` || API key ||
+|| `id` || `String` || API key ||
 
 == Login user ==
 
@@ -23,14 +23,14 @@ Logins user.
 
 *Prameters:*
 || *parameter* || *type* || *description* ||
-|| email || string || User's email ||
-|| password || string || User's password ||
+|| `email` || `String` || User's email ||
+|| `password` || `String` || User's password ||
 
 *Returns:*
-1 User structure.
+1 `User` structure.
 
-*User*
+*`User`*
 || *field* || *type* || *description* ||
-|| name || string || User's first name ||
-|| surname || string || User's last name ||
-|| gender || character || M for male, F for female ||
+|| `name` || `String` || User's first name ||
+|| `surname` || `String` || User's last name ||
+|| `gender` || `Character` || M for male, F for female ||
