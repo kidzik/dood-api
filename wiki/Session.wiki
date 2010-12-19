@@ -1,15 +1,34 @@
 #summary Session requests.
 
-= /session/start/ =
+= Session requests =
 
+== Session start ==
 To start session use
 
 {{{
 /session/start/
 }}}
 
+which returns 
+{{{
+{
+    "num_of_results": 1,
+    "code": 0,
+    "data": [
+    {
+        "photo_server": "http://static.dood.pl/photos/",
+        "key": "anlFT7KP",
+        "categories_date": "34635735",
+        "date": "2452642642",
+        "model": "ApiSession",
+        "id": "anlFT7KP"
+    }
+    ]
+}
+}}}
 
-= /session/login/ =
+
+== Login user ==
 
 To login user use
 
