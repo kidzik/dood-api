@@ -53,14 +53,13 @@ Każdy obiekt mapowany z bazy danych posiada nagłówek składający się z pól
 
 Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obiektu z takim polem (flaga true) oznacza że klient explicite poprosił o ten obiekt jednak został on już usunięty po stronie serwera. Oznacza to, że klient posiada nieaktualną wersję innego obiektu który spowodował wysłanie requesta o obiekt usunięty. Obiekt oznaczony flagą deleted należy natychmiast usunąć z pamięci lokalnej oraz w miarę możliwości uaktualnić obiekt z nieprawidłową referencją.
 
-==Business==
-
 ----
+
+==Business==
 
 || Numer typu || *0* ||
 || Nazwa typu || *`Business`* ||
 
-----
 
 || name || String || Nazwa businessu || 
 || longtitude || 	Double || Długość geograficzna || 
@@ -82,6 +81,8 @@ Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obi
 || _categories_	|| `List<Long>` || List ID-ków kategorii. String z CSV idków || 
 
   * Brak pola total_reviews lub total_adverts oznacza brak jakichkolwiek recenzji bądź promocji (odpowiednio). W takiej sytuacji pole reviews oraz adverts i advert mogą nie być w ogóle czytane. Reklama (promocja) frontowa jest też częścią listy promocji.
+
+----
 
 ==Business Short==
 
@@ -105,15 +106,14 @@ Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obi
 
   * Przy braku pola advert_date w sytuacji gdy obecne jest pole advert to klient sam podejmuje decyzje o czasie wyświetlania reklamy. Możliwym sposobem jest pamiętanie ostatniego czasu synchronizacji każdego obiektu i ustalenie arbitralnie maksymalnego czasu promocji w przypadku braku pola advert_date. Serwer natomiast powinien zadbać by pole advert_date było dostępne w przypadku wystąpienia pola advert.
 
+----
 
 ==Proximity Advertisement==
 
-----
 
 || Numer typu || *51* ||
 || Nazwa typu || *`AdvertProximity`* ||
 
-----
 
 || businesses || `List<Long>` || Lista ID businessów w tej promocji. Lista powinna zawierać co najmniej jeden element (maksymalnie 50) || 
 || expires || 	Long	|| Data wygaśnięcia promocji (ms. od 1.01.1970) || 
