@@ -1,3 +1,44 @@
 #summary Data exchange structure for server communication.
 
 = Data Exchange Structure =
+
+==Szkielet odpowiedzi serwera==
+
+{{{
+{	
+   "code"         : <Int  return_code>,
+   "message"      : <String return_message>,
+   "data"         : <JSONArray return_objects>,
+   "session_key"  : <String session_key>
+}
+}}}
+
+
+|| code || Kod odpowiedzi || 
+|| message || Wiadomość błędu || 
+|| data || Dane umieszczone w odpowiedzi (w formie tablicy obiektów) || 
+|| session`_`key || Klucz sesji używany przy dalszej komunikacji z serwerem. || 
+
+
+  * Pola data oraz message są opcjonalne. Pole code jest wymagane w każdej odpowiedzi z serwera. Pole session_key pojawia się tylko przy logowaniu i rejestracji.
+  * Pole data jest tablicą obiektów mapowanych z bazy danych po stronie serwera. Wszystkie dane które tam się znajdują traktuje się jako bieżącą wersje wymienionych obiektów.
+|| *1* || pole data może ( i jest to nawet wskazane ) zawierać nie tylko te obiekty, o które poprosił klient. W szczególności przy zapytaniu o konkretną galerię można od razu wysłać tą samą odpowiedzią zdjęcia tej galerii (obiekty Photo). Serwer implementuje logikę odpowiedzialną za mądre przesyłanie danych. ||
+|| *2* ||	Dane w tablicy data są przesyłane z zachowaniem kolejności. W pierwszym rzędzie przesyłane są te dane, o które użytkownik poprosił, a dopiero później ewentualne dodatkowe obiekty. ||
+|| *3* || Dane w tablicy data mogą zawierać reprezentacje obiektów wielu typów. ||
+|| *4* || Zakłada się że pole data jest puste (lub go brak) w przypadku gdy pole code jest różne od MSG_OK. Wyjątkiem jest aktualizacja/tworzenie obiektów przez klienta i ich rejestrowanie na serwerze. ||
+|| *5* || Pole message powinno być puste (lub go brak) w przypadku gdy code jest równe MSG_OK i niepuste w przeciwnym razie. ||
+
+
+==Szkielet danych zapytania klienta==
+
+{{{
+{	
+   "session_key"   : <String session_key>,
+   "ids"	   : <String ids-CSV>,
+   "has"           : <JSONArray has_objects>,
+   "new"           : <JSONObject new_object>,
+   "up"            : <JSONObject up_object>,
+   "del"           : <JSONObject del_object>,
+}
+}}}
+
