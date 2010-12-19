@@ -9,7 +9,7 @@ API serwisu [http://dood.pl/ dood.pl] definiuje format komunikacji oparty o wzor
 
 According to REST convention all requests are stated in the following form
 {{{
-/object/actions/
+/object/action/
 }}}
 
 All responses are JSON dictionaries:
