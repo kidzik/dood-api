@@ -7,7 +7,7 @@
   * [Introduction]
      * [HowItWorks How does dood-api works?]
   * [VersioningSystem Versioning System]
-  * Generic JSON Data Exchange Structure
+  * [DataExchangeStructure Generic Data Exchange Structure]
   * [ErrorCodes Error Codes]
   * [Datatypes]
   * [Requests]
