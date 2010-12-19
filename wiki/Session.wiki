@@ -1,0 +1,25 @@
+#summary Session requests.
+
+= /session/start/ =
+
+To start session use
+
+{{{
+/session/start/
+}}}
+
+
+= /session/login/ =
+
+To login user use
+
+{{{
+/session/login/
+}}}
+
+with parameters
+
+{{{
+email
+password
+}}}
