@@ -1,6 +1,12 @@
 #summary Data exchange structure for server communication.
 
+
 = Data Exchange Structure =
+
+Content:
+
+  * [DataExchangeStructure#Szkielet_odpowiedzi_serwera Szkielet odpowiedzi serwera]
+  * [DataExchangeStructure#Szkielet_danych_zapytania_klienta Szkielet danych zapytania klienta]
 
 ==Szkielet odpowiedzi serwera==
 
@@ -41,4 +47,11 @@
    "del"           : <JSONObject del_object>,
 }
 }}}
+
+|| session`_`key || klucz sesji || 
+|| ids || id obiektów o które pytamy pytanie o obiekty (String z CSV idków) || 
+|| has || JSONArray z nagłówkami (Header) obiektów do których się przyznajemy || 
+|| new || JSONObject  z jednym obiektem który tworzymy . Obiekt powinien być pozbawiony pól id i version (te nadaje serwer) ale musi mieć pole type (typ tworzonego obiektu) ||
+|| up || JSONObject  z jednym obiektem który uaktualniamy (cały obiekt). Obiekt musi mieć wszystkie z pól id , version , type || 
+|| del || JSONObject  z jednym obiektem który usuwamy (tylko nagłówek). Obiekt musi mieć wszystkie z pól id , version , type. || 
 
