@@ -1,0 +1,34 @@
+#summary Test cases of API for authentication and registration.
+
+= Test Cases - Authentication and Registration =
+
+Content:
+  
+  * [TestCasesAuthRegist#Session_start_test Session Start Test]
+  * [TestCasesAuthRegist#Login_Success_Test Login Success Test]
+
+== Session start test ==
+|| request || `http://dood.pl/api/session/start` ||
+|| response HTTP code || 200 ||
+
+response data (JSON):
+{{{ 
+{
+  "code" = 0x000000
+  "session_key" = "TEST_SESSION_KEY_01"
+}
+}}}
+
+== Login Success Test==
+|| request || `http://dood.pl/api/session/login` ||
+|| parameters (GET) || `email=TEST_ACCOUNT@dood.pl&password=TEST_ACCOUNT_VALID_PASSWORD` ||
+|| response HTTP code || 200 ||
+
+response data (JSON):
+{{{ 
+{
+  "code" = 0x000000
+  "session_key" = "TEST_SESSION_KEY_01"
+}
+}}}
+
