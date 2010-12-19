@@ -19,3 +19,4 @@ GET
 *`Category`*
 || *field* || *type* || *description* ||
 || `name` || `String` || Name of category ||
+|| `parent_id` || `Integer` || Parent category ||
