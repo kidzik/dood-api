@@ -1,11 +1,17 @@
-#summary TOC for dood-api
+#summary Table of Contents for WIKI
+#labels Featured
 
-= Introduction =
-Dood API is set of HTTP requests for managing data in dood.pl.
+=Table Of Contents=
 
-  * Intro
+
+  * Introduction
      * [HowItWorks How does dood-api works?]
+  * Versioning System
+  * Generic JSON Data Exchange Structure
+  * Error Codes
+  * Datatypes
   * Requests
      * [Session Session]
      * [Business Business]
      * [Categories Category]
+  * Test Cases
