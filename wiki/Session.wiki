@@ -2,43 +2,35 @@
 
 = Session requests =
 
-== Session start ==
-To start session use
+== /session/start/ ==
+Starts session.
 
-{{{
-/session/start/
-}}}
+*Prameters:*
+None
 
-which returns 
-{{{
-{
-    "num_of_results": 1,
-    "code": 0,
-    "data": [
-    {
-        "photo_server": "http://static.dood.pl/photos/",
-        "key": "anlFT7KP",
-        "categories_date": "34635735",
-        "date": "2452642642",
-        "model": "ApiSession",
-        "id": "anlFT7KP"
-    }
-    ]
-}
-}}}
+*Returns:*
+1 ApiSession structure.
 
+*ApiSession*
+|| *field* || *type* || *description* ||
+|| photo_server || string || URL of server with photos ||
+|| key || string || API key ||
+|| id || string || API key ||
 
 == Login user ==
 
-To login user use
+Logins user.
 
-{{{
-/session/login/
-}}}
+*Prameters:*
+|| *parameter* || *type* || *description* ||
+|| email || string || User's email ||
+|| password || string || User's password ||
 
-with parameters
+*Returns:*
+1 User structure.
 
-{{{
-email
-password
-}}}
+*User*
+|| *field* || *type* || *description* ||
+|| name || string || User's first name ||
+|| surname || string || User's last name ||
+|| gender || character || M for male, F for female ||
