@@ -1,0 +1,43 @@
+#summary Standard error codes returned by server.
+
+= Error Codes =
+
+|| *Kod* || *Nazwa* || *Wyjaśnienie* || 
+
+==Poprawna odpowiedź==
+
+|| 0x000000 || MSG_OK || Brak błędu, poprawna odpowiedź || 
+
+==Błędy kontaktu z serwerem==
+
+|| 0x000010 || ERR_SERVICE_UNAVAILABLE || Serwis jest chwilowo niedostępny|| 
+|| 0x000011 || ERR_SESSION_EXPIRED || Sesja wygasła|| 
+|| 0x000012 || ERR_NOT_AUTHORISED || Użytkownik nie jest uprawniony do pytania o obiekt. || 
+|| 0x000013 || ERR_NEED_LOGIN || Klient musi się zalogować by zrealizować requesta || 
+|| 0x000014 || 	ERR_NEED_UPDATE	|| Aplikacja jest zbyt stara by współpracować z serwerem || 
+|| 0x000015 || 	ERR_WRONG_API_KEY || 	Klucz api został odrzucony || 
+|| 0x000016 || 	ERR _LIMIT_EXCEEDED || 	Osiągnięto limit transferu danych w danym dniu || 
+
+==Błędy rejestracji i logowania==
+
+|| 0x000020 || 	ERR_WRONG_LOGIN	|| Logowanie. Podano błędny login || 
+|| 0x000021 || 	ERR_WRONG_PASS	|| Logowanie. Podano błędne hasło || 
+|| 0x000022 || 	ERR_LOGIN_EXISTS || 	Rejestracja. Login już istnieje || 
+|| 0x000023 || 	ERR_WRONG_EMAIL	|| Email jest w złym formacie. || 
+|| 0x000024 || 	ERR_PASS_TOO_SIMPLE || 	Hasło jest zbyt proste. || 
+
+==Błędy dostępu do obiektów==
+
+|| 0x000030 || 	ERR_OBJECT_NOT_FOUND ||  Obiekt nie istnieje || 
+|| 0x000031 || 	ERR_INCONSISTENCE || 	Klient ma nowszą oficjalną wersje obiektu niż serwer || 
+
+==Błędy lokalizacyjne I zewnętrznych serwisów==
+
+|| 0x000040 || 	ERR_ADDRESS_TRANSLATION	||  Błąd tłumaczenia adresu na punkt (Google maps) || 
+|| 0x000041 || 	ERR_REGION_NOT_SUPPORTED || Podana przez użytkownika lokalizacja jest daleko od jakichkolwiek danych z bazy. || 
+
+==Błędy wynikające z konfliktów w aktualizacji/tworzenia obiektów==
+
+|| 0x000050 || 	ERR_UPDATE_FAILED || Aktualizacja obiektu nie powiodła się || 
+|| 0x000051 || ERR_OBJECT_EXISTS || Tworzony obiekt jest identyczny/podobny do istniejącego || 
+|| 0x000062 || ERR_CANT_CREATE_OBJECT || Odmowa utworzenia obiektu || 
