@@ -8,6 +8,7 @@ Content:
   * [TestCasesAuthRegist#Login_Success_Test Login Success Test]
 
 == Session start test ==
+|| test name || `sessionStartTest`` ||
 || request || `http://dood.pl/api/session/start` ||
 || response HTTP code || 200 ||
 
@@ -20,6 +21,7 @@ response data (JSON):
 }}}
 
 == Login Success Test==
+|| test name || `loginSucessTest`` ||
 || request || `http://dood.pl/api/session/login` ||
 || parameters (GET) || `email=TEST_ACCOUNT@dood.pl&password=TEST_ACCOUNT_VALID_PASSWORD` ||
 || response HTTP code || 200 ||
@@ -31,4 +33,3 @@ response data (JSON):
   "session_key" = "TEST_SESSION_KEY_01"
 }
 }}}
-
