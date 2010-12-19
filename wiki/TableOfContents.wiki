@@ -4,8 +4,8 @@
 Dood API is set of HTTP requests for managing data in dood.pl.
 
   * Intro
-     * [HowItWorks How does dood-api works]
+     * [HowItWorks How does dood-api works?]
   * Requests
      * [Session Session]
-     * [Business Businesses]
-     * [Categories Categories]
+     * [Business Business]
+     * [Categories Category]
