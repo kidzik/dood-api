@@ -16,7 +16,7 @@
 || 0x000013 || ERR_NEED_LOGIN || Klient musi się zalogować by zrealizować requesta || 
 || 0x000014 || 	ERR_NEED_UPDATE	|| Aplikacja jest zbyt stara by współpracować z serwerem || 
 || 0x000015 || 	ERR_WRONG_API_KEY || 	Klucz api został odrzucony || 
-|| 0x000016 || 	ERR _LIMIT_EXCEEDED || 	Osiągnięto limit transferu danych w danym dniu || 
+|| 0x000016 || 	ERR_LIMIT_EXCEEDED || 	Osiągnięto limit transferu danych w danym dniu || 
 
 ==Błędy rejestracji i logowania==
 
