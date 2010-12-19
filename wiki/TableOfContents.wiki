@@ -9,7 +9,7 @@
   * Versioning System
   * Generic JSON Data Exchange Structure
   * Error Codes
-  * Datatypes
+  * [Datatypes]
   * Requests
      * [Session Session]
      * [Business Business]
