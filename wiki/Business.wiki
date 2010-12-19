@@ -1,0 +1,24 @@
+#summary Session requests.
+
+= Business requests =
+
+== `/business/get/` ==
+Starts session.
+
+*Method:*
+GET
+
+*Prameters:*
+|| *parameter* || *type* || *description* ||
+|| `id` (optional) || `Integer` || Business id ||
+|| `what` (optional) || `String` || Search phraze ||
+|| `where` (optional) || `String` || Search location ||
+
+*Returns:*
+`Business` structures.
+
+*`Business`*
+|| *field* || *type* || *description* ||
+|| `name` || `String` || Name of the venue ||
+|| `latitude` || `Number` || Business latitude ||
+|| `longitude` || `Number` || Business longitude ||
