@@ -2,8 +2,11 @@
 
 = Session requests =
 
-== /session/start/ ==
+== `/session/start/` ==
 Starts session.
+
+*Method:*
+GET
 
 *Prameters:*
 None
@@ -17,9 +20,11 @@ None
 || `key` || `String` || API key ||
 || `id` || `String` || API key ||
 
-== Login user ==
-
+== `/session/login/` ==
 Logins user.
+
+*Method:*
+GET
 
 *Prameters:*
 || *parameter* || *type* || *description* ||
@@ -34,3 +39,15 @@ Logins user.
 || `name` || `String` || User's first name ||
 || `surname` || `String` || User's last name ||
 || `gender` || `Character` || M for male, F for female ||
+
+== `/session/logout/` ==
+Logouts user.
+
+*Method:*
+GET
+
+*Prameters:*
+None
+
+*Returns:*
+Nothing
