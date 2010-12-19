@@ -1,0 +1,3 @@
+#summary Data exchange structure for server communication.
+
+= Data Exchange Structure =
