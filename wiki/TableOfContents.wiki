@@ -3,7 +3,9 @@
 = Introduction =
 Dood API is set of HTTP requests for managing data in dood.pl.
 
-  * Technical Notes
+  * Intro
      * [HowItWorks How does dood-api works]
-     * [Session Session requests]
-  * [FAQ FAQ]
+  * Requests
+     * [Session Session]
+     * [Business Businesses]
+     * [Categories Categories]
