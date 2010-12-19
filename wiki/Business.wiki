@@ -1,4 +1,4 @@
-#summary Session requests.
+#summary Business requests.
 
 = Business requests =
 
