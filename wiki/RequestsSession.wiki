@@ -13,49 +13,86 @@ Content:
 
 == Session Start ==
 || request URL || `/session/start/` || 
-|| description || Starts session. ||
 || method || GET ||
+|| description || Starts anonymous session. ||
 
 *Parameters*
 
 None
 
-*Returns*
-API session
+*Returns API codes*
+
+|| *API CODE* || *meaning* ||
+|| MSG_OK || successfuly started anonymous session ||
+
+*Returns data (for MSG_OK)*
+{{{
+{
+   "code" : 0x000000
+   "data" : {<APISession object>}
+}
+}}}
+
+[Datatypes#API_Session details about API Session object]
 
 ----
 
 == Session Login  ==
-|| request URL || `/session/login/` || 
-|| description || Logins user. ||
-|| method || GET ||
+|| request URL || *(HTTPS)* `/session/login/` || 
+|| method || *POST* ||
+|| description || Logins user and starts authenticated session ||
+
+<font color="red"> _warning: currently we support HTTP and GET method in this request_ </font>
 
 *Prameters:*
 || *parameter* || *type* || *description* ||
 || `email` || `String` || User's email ||
 || `password` || `String` || User's password ||
 
-*Returns:*
-1 `User` structure.
+*Returns HTTP code*
 
-*`User`*
-|| *field* || *type* || *description* ||
-|| `name` || `String` || User's first name ||
-|| `surname` || `String` || User's last name ||
-|| `gender` || `Character` || M for male, F for female ||
+|| *HTTP code* || *meaning*||
+|| 200 || server understood request (login process could have failed though) || 
+|| 401 || loging failed. There is no guarantee that response has data with API error code ||
+|| any other || server unreachable, unable to respond ||
+
+*Returns API code*
+
+|| *API CODE* || *meaning* ||
+|| MSG_OK || successfuly logged in and started authenticated session ||
+|| ERR_WRONG_LOGIN || wrong email address was as login || 
+|| ERR_WRONG_PASS || wrong password (means login exists in a database) ||
+
+*Returns data (for MSG_OK)*
+{{{
+{
+   "code" : 0x000000
+   "data" : {<APISession object>}
+}
+}}}
+
 
 ----
 
 == Session Logout ==
 || request URL || `/session/logout/` ||
-|| description || Logouts user. ||
 || method || GET ||
+|| description || Logouts user. ||
 
-*Prameters:*
+
+*Prameters (GET):*
+
+|| *parameter* || *type* ||*description* ||
+|| session_key || String ||current user's session key (anonymous or authenticated) ||
+
+*Returns API code:*
+
+|| *API CODE* || *meaning* ||
+|| MSG_OK || successful logut ||
+
+*Returns data:*
 
 None
-
-*Returns:*
 
 ----
 
