@@ -1,5 +1,24 @@
 #summary Standard error codes returned by server.
 
+Content:
+
+   * [ErrorCodes#Standard_HTTP_Codes Standard HTTP Codes]
+   * [ErrorCodes#API_Error_Codes API Error Codes]
+
+= Standard HTTP Codes =
+
+We try to keep standard meaning of all HTTP status codes. HTTP status codes are the 'first defense line' in our API.
+
+|| *HTTP code* || *meaning* ||
+|| *200* || *SC_OK*. it DOES NOT mean that operation was successful. It basically means that you need to look at API code to get information about error. It means only that server undestood your request properly. || 
+|| *401* || Authentication problems. The result data should still (but don't have to) be passed in response.||
+|| *any other* || server is down or unable respond. no data is passed (no guarantee) ||
+
+Be aware of other HTTP errors which may occur. Especially errors >500.
+
+
+= API Error Codes = 
+
 == Success ==
 
 || *Code* || *Name* || *Description* || 
@@ -16,7 +35,7 @@
 || `0x000015` || `ERR_WRONG_API_KEY` || 	API key is not authorised in dood.pl || 
 || `0x000016` || `ERR_LIMIT_EXCEEDED` || Daily access limit has been exceeded || 
 
-Be aware of other HTTP errors which may occur. Especially errors >500.
+
 
 == Authentication errors ==
 
