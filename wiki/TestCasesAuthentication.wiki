@@ -4,12 +4,12 @@
 
 Content:
   
-  * [TestCasesAuthRegist#Session_start_test Session Start Test]
-  * [TestCasesAuthRegist#Login_Success_Test Login Success Test]
-  * [TestCasesAuthRegist#Login_Fail_Wrong_Login_Test Login Fail Wrong Login Test]
-  * [TestCasesAuthRegist#Login_Fail_Wrong_Password_Test Login Fail Wrong Password Test]
-  * [TestCasesAuthRegist#Logout_Valid_Test Logout Valid Test]
-  * [TestCasesAuthRegist#Logout_Invalid_Test Logout Invalid Test]
+  * [TestCasesAuthentication#Session_start_test Session Start Test]
+  * [TestCasesAuthentication#Login_Success_Test Login Success Test]
+  * [TestCasesAuthentication#Login_Fail_Wrong_Login_Test Login Fail Wrong Login Test]
+  * [TestCasesAuthentication#Login_Fail_Wrong_Password_Test Login Fail Wrong Password Test]
+  * [TestCasesAuthentication#Logout_Valid_Test Logout Valid Test]
+  * [TestCasesAuthentication#Logout_Invalid_Test Logout Invalid Test]
 
 == Session start test ==
 || test name || `sessionStartTest` ||
