@@ -1,0 +1,53 @@
+#summary Session requests.
+
+= Session requests =
+
+== `/session/start/` ==
+Starts session.
+
+*Method:*
+GET
+
+*Prameters:*
+None
+
+*Returns:*
+1 `ApiSession` structure.
+
+*`ApiSession`*
+|| *field* || *type* || *description* ||
+|| `photo_server` || `String` || URL of server with photos ||
+|| `key` || `String` || API key ||
+|| `id` || `String` || API key ||
+
+== `/session/login/` ==
+Logins user.
+
+*Method:*
+GET
+
+*Prameters:*
+|| *parameter* || *type* || *description* ||
+|| `email` || `String` || User's email ||
+|| `password` || `String` || User's password ||
+
+*Returns:*
+1 `User` structure.
+
+*`User`*
+|| *field* || *type* || *description* ||
+|| `name` || `String` || User's first name ||
+|| `surname` || `String` || User's last name ||
+|| `gender` || `Character` || M for male, F for female ||
+
+== `/session/logout/` ==
+Logouts user.
+
+*Method:*
+GET
+
+*Prameters:*
+None
+
+*Returns:*
+Nothing
