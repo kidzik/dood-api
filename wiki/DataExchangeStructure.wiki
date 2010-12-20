@@ -47,3 +47,5 @@ Example of other parameters:
 || up || JSONObject  z jednym obiektem który uaktualniamy (cały obiekt). Obiekt musi mieć wszystkie z pól id , version , type || 
 || del || JSONObject  z jednym obiektem który usuwamy (tylko nagłówek). Obiekt musi mieć wszystkie z pól id , version , type. || 
 </wiki:comment>
+
+*A czemu nie JSONArray z headerami .. przy id i version nie bedziesz znal typu ..  rozwiazanie z headerami jest chyba bardziej generyczne .. ja mam obiekt Header ktory extenduja wszystkie inne obiekty bazodanowe*
