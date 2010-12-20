@@ -7,9 +7,8 @@ Content:
    * [Datatypes#Introduction Introduction]
    * [Datatypes#Interpretacja_list Interpretacja list]
    * [Datatypes#Header Header]
-   * [Datatypes#Business Business]
-   * [Datatypes#Business_Short BusinessShort]
-   * [Datatypes#Proximity_Advertisement ProximityAdvertisement]
+   * [DatatypesBusiness Business]
+   * [DatatypesAdvertProximity Advert Proximity]
 
 
 == Introduction == 
