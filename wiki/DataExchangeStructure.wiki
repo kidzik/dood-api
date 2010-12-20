@@ -14,7 +14,7 @@ Content:
 {	
    "code"         : 243,
    "message"      : "Description",
-   "data"         : [ ],
+   "data"         : [],
 }
 }}}
 
@@ -22,11 +22,12 @@ Content:
 || *Variable* || *Type* || *Description* || 
 || `code` || `Integer` || Error code || 
 || `message` (optional) || `String` || Error message || 
-|| `data` (optional) || `Array` || Array of results. Structures of data objects. Always up-to-date - there is no way to get archive ones. || 
+|| `data` (optional) || `JSONArray` || Array of results. Structures of data objects. Always up-to-date - there is no way to get archive ones. || 
 
 Data may contain not only objects requested directly by client. There might be also structures related to them. If for example client requests for Business object than he not only get Business structure, but also structures of Categories to which it belongs.
 
-(???) Dane w tablicy data są przesyłane z zachowaniem kolejności. W pierwszym rzędzie przesyłane są te dane, o które użytkownik poprosił, a dopiero później ewentualne dodatkowe obiekty. *Czy na pewno jest sens to wymuszac? I tak w `data` bedzie burdel.*.
+(???) Dane w tablicy data są przesyłane z zachowaniem kolejności. W pierwszym rzędzie przesyłane są te dane, o które użytkownik poprosił, a dopiero później ewentualne dodatkowe obiekty. *Czy na pewno jest sens to wymuszac? I tak w `data` bedzie burdel.*. ( .. tu idea byla taka ze klient powinien cacheowac najpierw te obiekty o ktore poprosił .. żeby odśmiecarka cachea nie wywalila obiektu o ktory wlasnie poprosil ..stad jedyna kolejnosc to najpierw te obiekty o ktore prosil a potem inne)
+
 
 == Request format ==
 
