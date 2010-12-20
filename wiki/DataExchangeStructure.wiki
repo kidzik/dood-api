@@ -5,8 +5,8 @@
 
 Content:
 
-  * [DataExchangeStructure#Szkielet_odpowiedzi_serwera Szkielet odpowiedzi serwera]
-  * [DataExchangeStructure#Szkielet_danych_zapytania_klienta Szkielet danych zapytania klienta]
+  * [DataExchangeStructure#Response_format Response format]
+  * [DataExchangeStructure#Request_format Szkielet Request format]
 
 == Response format ==
 
