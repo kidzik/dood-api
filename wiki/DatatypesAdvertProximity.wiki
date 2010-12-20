@@ -1,0 +1,17 @@
+#summary One-sentence summary of this page.
+
+=Proximity Advertisement=
+
+
+|| Numer typu || *51* ||
+|| Nazwa typu || *`AdvertProximity`* ||
+
+
+|| businesses || `List<Long>` || Lista ID businessów w tej promocji. Lista powinna zawierać co najmniej jeden element (maksymalnie 50) || 
+|| expires || 	Long	|| Data wygaśnięcia promocji (ms. od 1.01.1970) || 
+|| latitude || 	Double || 	Szerokość geograficzna środka promocji || 
+|| longtitude || 	Double	|| Długość geograficzna środka promocji || 
+|| radius || 	Long || 	Promień funkcjonowania recenzji (w metrach) || 
+|| city	|| String || 	Miasto z którego zostały wybrane reklamy || 
+
+  * Należy zwrócić uwagę, że pole businesses nie ma pola total_businesses. Przesyłamy od razu wszystkie obiekty na raz i nie można dopytać się o pozostałe obiekty na liście.
