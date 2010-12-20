@@ -1,45 +1,47 @@
 #summary Standard error codes returned by server.
 
-==Poprawna odpowiedź==
+== Success ==
 
-|| *Kod* || *Nazwa* || *Wyjaśnienie* || 
-|| `0x000000` || `MSG_OK` || Brak błędu, poprawna odpowiedź || 
+|| *Code* || *Name* || *Description* || 
+|| `0x000000` || `MSG_OK` || Success || 
 
-==Błędy kontaktu z serwerem==
+== General server errors ==
 
-|| *Kod* || *Nazwa* || *Wyjaśnienie* || 
-|| `0x000010` || `ERR_SERVICE_UNAVAILABLE` || Serwis jest chwilowo niedostępny|| 
-|| `0x000011` || `ERR_SESSION_EXPIRED` || Sesja wygasła|| 
-|| `0x000012` || `ERR_NOT_AUTHORISED` || Użytkownik nie jest uprawniony do pytania o obiekt. || 
-|| `0x000013` || `ERR_NEED_LOGIN` || Klient musi się zalogować by zrealizować requesta || 
-|| `0x000014` || `ERR_NEED_UPDATE`|| Aplikacja jest zbyt stara by współpracować z serwerem || 
-|| `0x000015` || `ERR_WRONG_API_KEY` || 	Klucz api został odrzucony || 
-|| `0x000016` || `ERR_LIMIT_EXCEEDED` || 	Osiągnięto limit transferu danych w danym dniu || 
+|| *Code* || *Name* || *Description* || 
+|| `0x000010` || `ERR_SERVICE_UNAVAILABLE` || Service is temporary unavaible || 
+|| `0x000011` || `ERR_SESSION_EXPIRED` || Sesion expired || 
+|| `0x000012` || `ERR_NOT_AUTHORISED` || User is not authorised for given request || 
+|| `0x000013` || `ERR_NEED_LOGIN` || Cleint need to login for this request || 
+|| `0x000014` || `ERR_NEED_UPDATE`|| Client need update || 
+|| `0x000015` || `ERR_WRONG_API_KEY` || 	API key is not authorised in dood.pl || 
+|| `0x000016` || `ERR_LIMIT_EXCEEDED` || Daily access limit has been exceeded || 
 
-==Błędy rejestracji i logowania==
+Be aware of other HTTP errors which may occur. Especially errors >500.
 
-|| *Kod* || *Nazwa* || *Wyjaśnienie* || 
-|| `0x000020` || `ERR_WRONG_LOGIN` || Logowanie. Podano błędny login || 
-|| `0x000021` || `ERR_WRONG_PASS` || Logowanie. Podano błędne hasło || 
-|| `0x000022` || `ERR_LOGIN_EXISTS` || Rejestracja. Login już istnieje || 
-|| `0x000023` || `ERR_WRONG_EMAIL` || Email jest w złym formacie. || 
-|| `0x000024` || `ERR_PASS_TOO_SIMPLE` || Hasło jest zbyt proste. || 
+== Authentication errors ==
 
-==Błędy dostępu do obiektów==
+|| *Code* || *Name* || *Description* || 
+|| `0x000020` || `ERR_WRONG_LOGIN` || Incorrect e-mail || 
+|| `0x000021` || `ERR_WRONG_PASS` || Incorrect password || 
+|| `0x000022` || `ERR_LOGIN_EXISTS` || E-mail exists || 
+|| `0x000023` || `ERR_WRONG_EMAIL` || Email in wrong format. || 
+|| `0x000024` || `ERR_PASS_TOO_SIMPLE` || Password is too simple. || 
 
-|| *Kod* || *Nazwa* || *Wyjaśnienie* || 
-|| `0x000030` || `ERR_OBJECT_NOT_FOUND` ||  Obiekt nie istnieje || 
-|| `0x000031` || `ERR_INCONSISTENCE` || 	Klient ma nowszą oficjalną wersje obiektu niż serwer || 
+== Data access errors ==
 
-==Błędy lokalizacyjne I zewnętrznych serwisów==
+|| *Code* || *Name* || *Description* || 
+|| `0x000030` || `ERR_OBJECT_NOT_FOUND` ||  Object does not exist || 
+|| `0x000031` || `ERR_INCONSISTENCE` || 	Client has newer version of object than server. || 
 
-|| *Kod* || *Nazwa* || *Wyjaśnienie* || 
-|| `0x000040` || `ERR_ADDRESS_TRANSLATION` ||  Błąd tłumaczenia adresu na punkt (Google maps) || 
-|| `0x000041` || `ERR_REGION_NOT_SUPPORTED` || Podana przez użytkownika lokalizacja jest daleko od jakichkolwiek danych z bazy. || 
+== Localization errors ==
 
-==Błędy wynikające z konfliktów w aktualizacji/tworzenia obiektów==
+|| *Code* || *Name* || *Description* || 
+|| `0x000040` || `ERR_ADDRESS_TRANSLATION` ||  Can't find location from given phraze || 
+|| `0x000041` || `ERR_REGION_NOT_SUPPORTED` || There is no data for given position || 
 
-|| *Kod* || *Nazwa* || *Wyjaśnienie* || 
-|| `0x000050` || `ERR_UPDATE_FAILED` || Aktualizacja obiektu nie powiodła się || 
-|| `0x000051` || `ERR_OBJECT_EXISTS` || Tworzony obiekt jest identyczny/podobny do istniejącego || 
-|| `0x000062` || `ERR_CANT_CREATE_OBJECT` || Odmowa utworzenia obiektu || 
+== Synchronization and concurency errors ==
+
+|| *Code* || *Name* || *Description* || 
+|| `0x000050` || `ERR_UPDATE_FAILED` || Object hasn't been updated || 
+|| `0x000051` || `ERR_OBJECT_EXISTS` || Object does not exist || 
+|| `0x000062` || `ERR_CANT_CREATE_OBJECT` || Object can't be created || 
