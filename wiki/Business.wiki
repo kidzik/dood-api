@@ -25,7 +25,7 @@ GET
 || `address` || `String` || Adres businessu || 
 || `city` || `String` || Miasto businessu || 
 || `phone` || `String` || Numer telefonu (kom lub stacjonarny) || 
-|| `rating` || `Double` || Rating lokalu (skala 0.0 – 5.0) domyślnie: 0 || 
+|| `rating` || `Double` || Rating lokalu (skala 1.0 – 5.0) domyślnie: `None` || 
 || `www` || `String` || Web Page || 
 || `gallery` (optional) || `Long` || ID obiektu Gallery który przechowuje zdjęcia businessu || 
 || `photo` (optional) || `String` || URL do jednego zdjęcia frontowego businessu || 
