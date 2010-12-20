@@ -11,6 +11,7 @@
   * [Datatypes]
      * [DatatypesBusiness Business]
      * [DatatypesAdvertProximity Advert Proximity]
+     * [DatatypesCategory Category]
   * Requests
      * [Session Session]
      * [Business Business]
