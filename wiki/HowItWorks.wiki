@@ -2,8 +2,7 @@
 
 = Introduction =
 
-API serwisu [http://dood.pl/ dood.pl] definiuje format komunikacji oparty o wzorzec REST. Dokument nie określa adresu konkretnego serwera, który odpowiada w sposób poprawny na nadchodzące requesty. Użytkownik tego protokołu może wystawić własny serwer i połączyć go z dowolną bazą danych. Jedynym wymogiem jest zachowanie formatu ścieżek zapytań po adresie serwera. Zaleca się również korzystanie z pakowania danych przy użyciu GZIPa. Dane bazy dood.pl zostały wystawione na serwerze http://dood.pl/api/ zgodnie z opisanym w tym dokumencie API.
-
+API for [http://dood.pl/ dood.pl] defines communication based on REST methodology. This document do not assume any specific server (or client) implementation, but we try to ensure that API works correctly on [http://dood.pl/api/ http://dood.pl/api/].
 
 = Convention =
 
