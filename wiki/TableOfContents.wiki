@@ -13,6 +13,6 @@
      * [DatatypesAdvertProximity Advert Proximity]
      * [DatatypesCategory Category]
   * Requests
-     * [Session Session]
-     * [Business Business]
-     * [Categories Category]
+     * [RequestsSession Session]
+     * [RequestsBusiness Business]
+     * [RequestsCategories Category]
