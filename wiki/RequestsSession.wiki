@@ -29,11 +29,11 @@ None
 {{{
 {
    "code" : 0x000000
-   "data" : {<APISession object>}
+   "data" : [{<APISession object>}]
 }
 }}}
 
-[Datatypes#API_Session details about API Session object]
+`"data"` contains JSONArray with JSONObject representation of [Datatypes#API_Session API Session]
 
 ----
 
