@@ -19,7 +19,7 @@ Content:
 || `latitude` || `Double` || User's current latitude  ||
 || `longtitude` || `Double` || User's current longtitude ||
 || `default_city` || `String` || Default city if coordinates are wrong or too far away from any database entry ||
-|| _`get_advert`_ || `Boolean` || True if AdvertProximity object requested. ||
+|| _`get_advert`_ || `Boolean` || True if [DatatypesAdvertProximity AdvertProximity] object requested. ||
 || _`only_open`_ || `Boolean` || User's current longtitude. Make sense only with _`get_advert`_="true"||
 || `categories` || `List<Long>` || CSV with IDs of categories. Make sense only with _`get_advert`_="true" ||
 
@@ -47,10 +47,10 @@ Content:
 
 _warning: data array can be empty (but data field should be present)._
 
-  * Pole `get_advert` definiuje czy klient chce w odpowiedzi dostać obiekt [DatatypesAdvertProximity Proximity Advertisement]. Serwer decyduje o tym co przesłać klientowi. Klient biernie wyświetla dane przychodzące od serwera.
+  * Pole `get_advert` definiuje czy klient chce w odpowiedzi dostać obiekt [DatatypesAdvertProximity AdvertProximity]. Serwer decyduje o tym co przesłać klientowi. Klient biernie wyświetla dane przychodzące od serwera.
 
   * Dane przesłane przez serwer mogą nie zawierać obiektu Proximity Advertisemenet a jedynie obiekty typu [DatatypesBusiness Business]. W takim wypadku serwer uznał, że w okolicy nie ma żadnych ofert do pokazania i po prostu przesyła wybrane (wg ewentualnych ograniczeń) dane businessów (klient może je pokazać lub nie).
 
   * Pola `only_open`, `categories` nie mają sensu jeśli nie ma flagi `get_advert=true`.
 
-  * W pierwszej wersji implementacji API w polu data w przypadku ustawienia flagi get_advert zwracane są zawsze elementy [DatatypesAdvertProximity Proximity Advertisement] oraz wszystkie obiekty [DatatypesBusiness Business] z listy. 
+  * W pierwszej wersji implementacji API w polu data w przypadku ustawienia flagi get_advert zwracane są zawsze elementy [DatatypesAdvertProximity AdvertProximity] oraz wszystkie obiekty [DatatypesBusiness Business] z listy. 
