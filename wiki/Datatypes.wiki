@@ -8,6 +8,7 @@ Content:
    * [Datatypes#Introduction Introduction]
    * [Datatypes#Interpretacja_list Interpretacja list]
    * [Datatypes#Header Header]
+   * [Datatypes#API_Session API Session]
    * [DatatypesBusiness Business]
    * [DatatypesAdvertProximity Advert Proximity]
    * [DatatypesCategory Category]
@@ -53,3 +54,10 @@ Każdy obiekt mapowany z bazy danych posiada nagłówek składający się z pól
 
 
 Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obiektu z takim polem (flaga true) oznacza że klient explicite poprosił o ten obiekt jednak został on już usunięty po stronie serwera. Oznacza to, że klient posiada nieaktualną wersję innego obiektu który spowodował wysłanie requesta o obiekt usunięty. Obiekt oznaczony flagą deleted należy natychmiast usunąć z pamięci lokalnej oraz w miarę możliwości uaktualnić obiekt z nieprawidłową referencją.
+
+==API Session==
+
+|| *field* || *type* || *description* ||
+|| `photo_server` || `String` || URL of server with photos ||
+|| `key` || `String` || API key ||
+|| `id` || `String` || API key ||
