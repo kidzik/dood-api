@@ -2,16 +2,26 @@
 
 = Session requests =
 
-== `/session/start/` ==
-Starts session.
+Content:
 
-*Method:*
-GET
+  * [RequestSession#Session_Start Session Start]
+  * [RequestSession#Session_Login Session Login]
+  * [RequestSession#Session_Logout Session Logout]
+  * [RequestSession#Session_Register Session Register]
 
-*Prameters:*
+----
+
+== Session Start ==
+|| request URL || `/session/start/` || 
+|| description || Starts session. ||
+|| method || GET ||
+
+*Parameters*
+
 None
 
-*Returns:*
+*Returns*
+
 1 `ApiSession` structure.
 
 *`ApiSession`*
@@ -20,11 +30,12 @@ None
 || `key` || `String` || API key ||
 || `id` || `String` || API key ||
 
-== `/session/login/` ==
-Logins user.
+----
 
-*Method:*
-GET
+== Session Login  ==
+|| request URL || `/session/login/` || 
+|| description || Logins user. ||
+|| method || GET ||
 
 *Prameters:*
 || *parameter* || *type* || *description* ||
@@ -40,14 +51,20 @@ GET
 || `surname` || `String` || User's last name ||
 || `gender` || `Character` || M for male, F for female ||
 
-== `/session/logout/` ==
-Logouts user.
+----
 
-*Method:*
-GET
+== Session Logout ==
+|| request URL || `/session/logout/` ||
+|| description || Logouts user. ||
+|| method || GET ||
 
 *Prameters:*
+
 None
 
 *Returns:*
-Nothing
+
+----
+
+== Session Regiser ==
+TODO:
