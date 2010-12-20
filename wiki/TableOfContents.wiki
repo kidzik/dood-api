@@ -14,5 +14,6 @@
      * [DatatypesCategory Category]
   * Requests
      * [RequestsSession Session]
+     * [RequestsLocation Location]
      * [RequestsBusiness Business]
      * [RequestsCategory Category]
