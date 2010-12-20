@@ -21,14 +21,7 @@ Content:
 None
 
 *Returns*
-
-1 `ApiSession` structure.
-
-*`ApiSession`*
-|| *field* || *type* || *description* ||
-|| `photo_server` || `String` || URL of server with photos ||
-|| `key` || `String` || API key ||
-|| `id` || `String` || API key ||
+API session
 
 ----
 
