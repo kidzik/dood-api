@@ -5,3 +5,4 @@
 
   * [TestCasesAuthentication Test Cases for Authentication (login/logout)]
   * [TestCasesRegistration Test Cases for Registration]
+  * [TestCasesLocalization Test Cases for Localization]
