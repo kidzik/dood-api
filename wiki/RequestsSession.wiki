@@ -4,10 +4,10 @@
 
 Content:
 
-  * [RequestSession#Session_Start Session Start]
-  * [RequestSession#Session_Login Session Login]
-  * [RequestSession#Session_Logout Session Logout]
-  * [RequestSession#Session_Register Session Register]
+  * [RequestsSession#Session_Start Session Start]
+  * [RequestsSession#Session_Login Session Login]
+  * [RequestsSession#Session_Logout Session Logout]
+  * [RequestsSession#Session_Register Session Register]
 
 ----
 
