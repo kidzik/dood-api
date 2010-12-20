@@ -6,7 +6,7 @@
 Content:
 
   * [DataExchangeStructure#Response_format Response format]
-  * [DataExchangeStructure#Request_format Szkielet Request format]
+  * [DataExchangeStructure#Request_format Request format]
 
 == Response format ==
 
@@ -21,18 +21,12 @@ Content:
 
 || *Variable* || *Type* || *Description* || 
 || `code` || `Integer` || Error code || 
-|| `message` || `String` || Error message || 
-|| `data` || `Array` || Array of results || 
+|| `message` (optional) || `String` || Error message || 
+|| `data` (optional) || `Array` || Array of results. Structures of data objects. Always up-to-date - there is no way to get archive ones. || 
 
+Data may contain not only objects requested directly by client. There might be also structures related to them. If for example client requests for Business object than he not only get Business structure, but also structures of Categories to which it belongs.
 
-  * Pola data oraz message są opcjonalne. Pole code jest wymagane w każdej odpowiedzi z serwera. Pole session_key pojawia się tylko przy logowaniu i rejestracji.
-  * Pole data jest tablicą obiektów mapowanych z bazy danych po stronie serwera. Wszystkie dane które tam się znajdują traktuje się jako bieżącą wersje wymienionych obiektów.
-|| *1* || pole data może ( i jest to nawet wskazane ) zawierać nie tylko te obiekty, o które poprosił klient. W szczególności przy zapytaniu o konkretną galerię można od razu wysłać tą samą odpowiedzią zdjęcia tej galerii (obiekty Photo). Serwer implementuje logikę odpowiedzialną za mądre przesyłanie danych. ||
-|| *2* ||	Dane w tablicy data są przesyłane z zachowaniem kolejności. W pierwszym rzędzie przesyłane są te dane, o które użytkownik poprosił, a dopiero później ewentualne dodatkowe obiekty. ||
-|| *3* || Dane w tablicy data mogą zawierać reprezentacje obiektów wielu typów. ||
-|| *4* || Zakłada się że pole data jest puste (lub go brak) w przypadku gdy pole code jest różne od MSG_OK. Wyjątkiem jest aktualizacja/tworzenie obiektów przez klienta i ich rejestrowanie na serwerze. ||
-|| *5* || Pole message powinno być puste (lub go brak) w przypadku gdy code jest równe MSG_OK i niepuste w przeciwnym razie. ||
-
+Dane w tablicy data są przesyłane z zachowaniem kolejności. W pierwszym rzędzie przesyłane są te dane, o które użytkownik poprosił, a dopiero później ewentualne dodatkowe obiekty. *Czy na pewno jest sens to wymuszac? I tak w `data` bedzie burdel.*.
 
 == Request format ==
 
