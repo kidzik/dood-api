@@ -15,4 +15,4 @@
   * Requests
      * [RequestsSession Session]
      * [RequestsBusiness Business]
-     * [RequestsCategories Category]
+     * [RequestsCategory Category]
