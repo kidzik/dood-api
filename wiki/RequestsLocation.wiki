@@ -45,7 +45,9 @@ Content:
 }
 }}}
 
-_warning: data array can be empty (but data field should be present)._
+_warning: data array can be empty (but data field should be present in the reponse)._
+
+_warning 2: ERR_REGION_NOT_SUPPORTED response looks the same except for the API code._
 
   * Pole `get_advert` definiuje czy klient chce w odpowiedzi dostać obiekt [DatatypesAdvertProximity AdvertProximity]. Serwer decyduje o tym co przesłać klientowi. Klient biernie wyświetla dane przychodzące od serwera.
 
