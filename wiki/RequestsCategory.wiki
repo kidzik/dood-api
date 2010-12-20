@@ -1,0 +1,22 @@
+#summary Category requests.
+
+= Category requests =
+
+== `/category/get/` ==
+Get children of category with given `parent_id`.
+
+*Method:*
+GET
+
+*Prameters:*
+|| *parameter* || *type* || *description* || *default* ||
+|| `parent_id` (optional || `Integer` || Get children of category with given `parent_id` || `0` ||
+|| `recursive` (optional) || `Boolean` || Show all subcategories recursively || `TRUE` ||
+
+*Returns:*
+`Category` structures.
+
+*`Category`*
+|| *field* || *type* || *description* ||
+|| `name` || `String` || Name of category ||
+|| `parent_id` || `Integer` || Parent category ||
