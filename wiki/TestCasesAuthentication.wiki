@@ -1,4 +1,4 @@
-#summary Test cases of API for authentication and registration.
+#summary Test cases of API for authentication (login/logout).
 
 = Test Cases - Authentication=
 
