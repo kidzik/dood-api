@@ -15,3 +15,5 @@
      * [Business Business]
      * [Categories Category]
   * [TestCases Test Cases]
+     * [TestCasesAuthentication Test Cases Authentication]
+     * [TestCasesRegistration Test Cases Registration]
