@@ -1,4 +1,5 @@
 #summary Datatypes of objects used by dood server.
+#labels Featured
 
 = Data types =
 
@@ -9,6 +10,7 @@ Content:
    * [Datatypes#Header Header]
    * [DatatypesBusiness Business]
    * [DatatypesAdvertProximity Advert Proximity]
+   * [DatatypesCategory Category]
 
 
 == Introduction == 
