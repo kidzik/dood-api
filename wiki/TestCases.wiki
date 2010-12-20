@@ -1,5 +1,7 @@
 #summary Test scenarios for dood-api.
+#labels Featured
 
 = Test Cases =
 
-  * [TestCasesAuthRegist Test Cases for Authentication, Registration and Session Control]
+  * [TestCasesAuthentication Test Cases for Authentication (login/logout)]
+  * [TestCasesRegistration Test Cases for Registration]
