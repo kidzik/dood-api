@@ -1,0 +1,13 @@
+#summary Category database object spec.
+
+=Category=
+
+|| Numer typu || *60* ||
+|| Nazwa typu || *`Category`* ||
+
+
+|| name || String || Nazwa kategorii || 
+|| parent || Long || ID rodzica || 
+|| _photo_ || String || URL do pliku z ikona kategorii ||
+
+Obiekt Category przechowywany w pamięci lokalnej powinien mieć pole children z wskaźnikami do wszystkich dzieci. Serwer aby wspierać szybką budowę drzewa kategorii powinien przesyłać obiekty Category w dobrej (wspierającej algorytm tworzenia drzewa) kolejności.
