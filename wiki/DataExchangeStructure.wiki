@@ -8,22 +8,21 @@ Content:
   * [DataExchangeStructure#Szkielet_odpowiedzi_serwera Szkielet odpowiedzi serwera]
   * [DataExchangeStructure#Szkielet_danych_zapytania_klienta Szkielet danych zapytania klienta]
 
-==Szkielet odpowiedzi serwera==
+== Response format ==
 
 {{{
 {	
-   "code"         : <Int  return_code>,
-   "message"      : <String return_message>,
-   "data"         : <JSONArray return_objects>,
-   "session_key"  : <String session_key>
+   "code"         : 243,
+   "message"      : "Description",
+   "data"         : [ ],
 }
 }}}
 
 
-|| code || Kod odpowiedzi || 
-|| message || Wiadomość błędu || 
-|| data || Dane umieszczone w odpowiedzi (w formie tablicy obiektów) || 
-|| session`_`key || Klucz sesji używany przy dalszej komunikacji z serwerem. || 
+|| *Variable* || *Type* || *Description* || 
+|| `code` || `Integer` || Error code || 
+|| `message` || `String` || Error message || 
+|| `data` || `Array` || Array of results || 
 
 
   * Pola data oraz message są opcjonalne. Pole code jest wymagane w każdej odpowiedzi z serwera. Pole session_key pojawia się tylko przy logowaniu i rejestracji.
@@ -35,23 +34,21 @@ Content:
 || *5* || Pole message powinno być puste (lub go brak) w przypadku gdy code jest równe MSG_OK i niepuste w przeciwnym razie. ||
 
 
-==Szkielet danych zapytania klienta==
+== Request format ==
 
-{{{
-{	
-   "session_key"   : <String session_key>,
-   "ids"	   : <String ids-CSV>,
-   "has"           : <JSONArray has_objects>,
-   "new"           : <JSONObject new_object>,
-   "up"            : <JSONObject up_object>,
-   "del"           : <JSONObject del_object>,
-}
-}}}
+API Request is either POST or GET HTTP request, with parameters in standard HTTP format:
+`param1=value1&param2=value2&...`
 
-|| session`_`key || klucz sesji || 
-|| ids || id obiektów o które pytamy pytanie o obiekty (String z CSV idków) || 
-|| has || JSONArray z nagłówkami (Header) obiektów do których się przyznajemy || 
-|| new || JSONObject  z jednym obiektem który tworzymy . Obiekt powinien być pozbawiony pól id i version (te nadaje serwer) ale musi mieć pole type (typ tworzonego obiektu) ||
+Almost every request has session key:
+
+|| `session_key` || Session key (must be given everywhere except /session/start/ request || 
+
+Example of other parameters:
+
+|| `ids` || string with ids of items that client want ||
+|| `has` || string with ids we already have in format "id1,version1;id2;version2" || 
+<wiki:comment>
+|| `new` || JSONObject  z jednym obiektem który tworzymy . Obiekt powinien być pozbawiony pól id i version (te nadaje serwer) ale musi mieć pole type (typ tworzonego obiektu) ||
 || up || JSONObject  z jednym obiektem który uaktualniamy (cały obiekt). Obiekt musi mieć wszystkie z pól id , version , type || 
 || del || JSONObject  z jednym obiektem który usuwamy (tylko nagłówek). Obiekt musi mieć wszystkie z pól id , version , type. || 
-
+</wiki:comment>
