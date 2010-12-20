@@ -19,6 +19,20 @@ GET
 
 *`Business`*
 || *field* || *type* || *description* ||
-|| `name` || `String` || Name of the venue ||
-|| `latitude` || `Number` || Business latitude ||
-|| `longitude` || `Number` || Business longitude ||
+|| `name` || `String` || Nazwa businessu || 
+|| `longtitude` || `Double` || Długość geograficzna || 
+|| `latitude` || `Double` || Szerokość geograficzna || 
+|| `address` || `String` || Adres businessu || 
+|| `city` || `String` || Miasto businessu || 
+|| `phone` || `String` || Numer telefonu (kom lub stacjonarny) || 
+|| `rating` || `Double` || Rating lokalu (skala 0.0 – 5.0) domyślnie: 0 || 
+|| `www` || `String` || Web Page || 
+|| `gallery` (optional) || `Long` || ID obiektu Gallery który przechowuje zdjęcia businessu || 
+|| `photo` (optional) || `String` || URL do jednego zdjęcia frontowego businessu || 
+|| `total_reviews` || 	`Int` || Liczba wszystkich recenzji tego business || 
+|| `reviews` || `Array` || Lista ID-ków recenzji tego businessu. CSV idków. || 
+|| `advert` || `String` || Tekst reklamy frontowej (max 160 znaków) || 
+|| `total_adverts` || `Long` || Liczba wszystkich promocji businessu. || 
+|| `adverts` || `Array` || CSV idków promocji tego businessu || 
+|| `weight` || `Double` || Waga businessu. (defaultowo 0) skala 0-1 || 
+|| `categories` || `Array` || Array of ids || 
