@@ -17,3 +17,4 @@
   * [TestCases Test Cases]
      * [TestCasesAuthentication Test Cases Authentication]
      * [TestCasesRegistration Test Cases Registration]
+     * [TestCasesLocalization Test Cases Localization]
