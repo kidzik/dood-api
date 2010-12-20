@@ -9,6 +9,7 @@
   * [DataExchangeStructure Generic Data Exchange Structure]
   * [ErrorCodes Error Codes]
   * [Datatypes]
+     * [DatatypesBusiness Business]
   * [Requests]
      * [Session Session]
      * [Business Business]
