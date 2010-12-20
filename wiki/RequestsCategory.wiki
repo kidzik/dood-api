@@ -14,9 +14,4 @@ GET
 || `recursive` (optional) || `Boolean` || Show all subcategories recursively || `TRUE` ||
 
 *Returns:*
-`Category` structures.
-
-*`Category`*
-|| *field* || *type* || *description* ||
-|| `name` || `String` || Name of category ||
-|| `parent_id` || `Integer` || Parent category ||
+[DatatypesCategory Category] structures.
