@@ -10,7 +10,8 @@
   * [ErrorCodes Error Codes]
   * [Datatypes]
      * [DatatypesBusiness Business]
-  * [Requests]
+     * [DatatypesAdvertProximity Advert Proximity]
+  * Requests
      * [Session Session]
      * [Business Business]
      * [Categories Category]
