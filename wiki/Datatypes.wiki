@@ -53,6 +53,8 @@ Każdy obiekt mapowany z bazy danych posiada nagłówek składający się z pól
 || `version` || `Date` || Date of last edit. UNIX format. || 
 || `deleted` || `Boolean` || Obiekt nie istnieje w bazie danych || 
 
+`id` and `type` uniquely define data object.
+
 
 Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obiektu z takim polem (flaga true) oznacza że klient explicite poprosił o ten obiekt jednak został on już usunięty po stronie serwera. Oznacza to, że klient posiada nieaktualną wersję innego obiektu który spowodował wysłanie requesta o obiekt usunięty. Obiekt oznaczony flagą deleted należy natychmiast usunąć z pamięci lokalnej oraz w miarę możliwości uaktualnić obiekt z nieprawidłową referencją.
 
