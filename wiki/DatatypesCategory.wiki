@@ -10,4 +10,8 @@
 || parent || Long || ID rodzica || 
 || _photo_ || String || URL do pliku z ikona kategorii ||
 
-Obiekt Category przechowywany w pamięci lokalnej powinien mieć pole children z wskaźnikami do wszystkich dzieci. Serwer aby wspierać szybką budowę drzewa kategorii powinien przesyłać obiekty Category w dobrej (wspierającej algorytm tworzenia drzewa) kolejności.
+*NOTE*
+  * Categories are organized in a tree structure.
+  * There is no separate _root_ element for category tree. Children of `root` will all have `JSON Null` object in `parent` field.
+
+Obiekt Category przechowywany w pamięci lokalnej powinien mieć pole children ze wskaźnikami do wszystkich dzieci. Serwer aby wspierać szybką budowę drzewa kategorii powinien przesyłać obiekty Category w dobrej (wspierającej algorytm tworzenia drzewa) kolejności.
