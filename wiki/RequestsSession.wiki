@@ -44,7 +44,7 @@ None
 || `password` || `String` || User's password ||
 
 *Returns data*
-1 Datatypes#API_Session API Session] structure.
+1 [Datatypes#API_Session API Session] structure.
 
 *Error codes*
 
