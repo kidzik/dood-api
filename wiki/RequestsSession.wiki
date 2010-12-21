@@ -86,7 +86,7 @@ Nothing
 
 ----
 
-== Session Regiser ==
+== Session Register ==
 || request URL || *(HTTPS)* `/session/register/` || 
 || method || *POST* ||
 || description || Registration of new dood user. ||
