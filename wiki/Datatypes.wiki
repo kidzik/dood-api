@@ -60,5 +60,6 @@ Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obi
 
 || *field* || *type* || *description* ||
 || `photo_server` || `String` || URL of server with photos ||
-|| `key` || `String` || API key ||
+|| `session_key` || `String` || session key ||
 || `id` || `String` || API key ||
+|| `category_version` || Long || ms. from 1.01.1970 ||
