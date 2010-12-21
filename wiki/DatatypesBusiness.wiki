@@ -16,17 +16,19 @@
 || _www_ || String || Web Page || 
 || _gallery_	|| Long || ID obiektu Gallery który przechowuje zdjęcia businessu || 
 || _photo_	|| String || URL do jednego zdjęcia frontowego businessu || 
-|| _total_reviews_ || 	Int || Liczba wszystkich recenzji tego business || 
+|| _total_reviews_ || Int || Liczba wszystkich recenzji tego business || 
 || _reviews_	|| `List<Long>` || Lista ID-ków recenzji tego businessu. CSV idków || 
 || _advert_	|| String || Tekst reklamy frontowej (max 160 znaków) || 
 || _advert_date_ || Long || Data wygaśnięcia reklamy frontowej (ms. Od 1.01.1970) || 
-|| total_adverts || Long || Liczba wszystkich promocji businessu. || 
+|| _total_adverts_ || Long || Liczba wszystkich promocji businessu. || 
 || _adverts_	|| `List<Long>` || CSV idków promocji tego businessu || 
 || _weight_	|| Double || Waga businessu. (defaultowo 0) skala 0-1 || 
 || _categories_	|| `List<Long>` || List ID-ków kategorii. String z CSV idków || 
 || _open_hours_ || String || Open hours. format `HH:MM-HH:MM;HH:MM-HH:MM;....` for all 7 days ||
 
-  * Brak pola total_reviews lub total_adverts oznacza brak jakichkolwiek recenzji bądź promocji (odpowiednio). W takiej sytuacji pole reviews oraz adverts i advert mogą nie być w ogóle czytane. Reklama (promocja) frontowa jest też częścią listy promocji.
+_*NOTE:*_
+  * Brak pola `total_reviews` lub `total_adverts` oznacza brak jakichkolwiek recenzji bądź promocji (odpowiednio). W takiej sytuacji pole reviews oraz adverts i advert mogą nie być w ogóle czytane. 
+  * Reklama (promocja) frontowa jest też częścią listy promocji.
 
 ----
 
@@ -41,6 +43,8 @@
 || advert_date_ ||  Long || Data wygaśnięcia reklamy (ms. od 1.01.1970) || 
 || _weight_ || Int || Waga businessu. (defaultowo 0) || 
 || _open_hours_ || String || Open hours. format `HH:MM-HH:MM;HH:MM-HH:MM;....` for all 7 days ||
+
+_*NOTE:*_
 
   * Business Short jest tak naprawdę obiektem Business jednak w założeniu nie ma wszystkich danych które może mieć pełen obiekt Business. Jedyna różnica to polega na tym że klient może explicite poprosić o obiekt w okrojonej wersji (BusinessShort) poprzez dodanie flagi short=yes. Dodatkowo klient powinien wykrywać czy posiada wersje Short czy pełną. Obecność dowolnego pola nienależącego jedynie do wersji Short oznacza że dany obiekt jest w wersji pełnej (Business).
 
