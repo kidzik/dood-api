@@ -8,7 +8,7 @@ Content:
 == Business Get ==
 || request URL || *(HTTP)* `/business/get/` || 
 || method || *GET* ||
-|| description || request for [DatatypesBusiness Business object(s). Also used to search for businesses ||
+|| description || request for [DatatypesBusiness Business object(s)]. Also used to search for businesses ||
 
 *Prameters:*
 || *parameter* || *type* || *description* ||
