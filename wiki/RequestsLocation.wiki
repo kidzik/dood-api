@@ -23,6 +23,16 @@ Content:
 || _`only_open`_ || `Boolean` || User's current longtitude. Make sense only with _`get_advert`_="true"||
 || `categories` || `List<Long>` || CSV with IDs of categories. Make sense only with _`get_advert`_="true" ||
 
+
+*Returns data (for MSG_OK)*
+|| how many || type ||
+|| 1 || [DatatypesAdvertProximity AdvertProximity object] ||
+|| 0-50 || [DatatypesBusiness Business objects] ||
+
+<font color="red">
+_*note:*_ it is advisable to send all Business objects from the list in [DatatypesAdvertProximity AdvertProximity]. It is not guaranteed though. 
+</font>
+
 *Returns HTTP code*
 
 || *HTTP code* || *meaning*||
@@ -37,17 +47,12 @@ Content:
 || ERR_REGION_NOT_SUPPORTED || coordinates are to far from any database entry. `default_city` parameter has been considered. || 
 
 
-*Returns data (for MSG_OK)*
-{{{
-{
-   "code" : 0x000000
-   "data" : [{<AdvertProximity>; {<Business>} ; {<Business>} ...]
-}
-}}}
-
 _warning: data array can be empty (but data field should be present in the reponse)._
 
 _warning 2: ERR_REGION_NOT_SUPPORTED response looks the same except for the API code._
+
+
+_*Note:*_
 
   * Pole `get_advert` definiuje czy klient chce w odpowiedzi dostać obiekt [DatatypesAdvertProximity AdvertProximity]. Serwer decyduje o tym co przesłać klientowi. Klient biernie wyświetla dane przychodzące od serwera.
 
