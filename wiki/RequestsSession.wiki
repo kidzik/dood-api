@@ -20,20 +20,14 @@ Content:
 
 None
 
-*Returns API codes*
+*Returns data*
 
-|| *API CODE* || *meaning* ||
+[Datatypes#API_Session API Session] structures.
+
+*Error codes*
+|| *ERROR CODE* || *meaning* ||
 || MSG_OK || successfuly started anonymous session ||
 
-*Returns data (for MSG_OK)*
-{{{
-{
-   "code" : 0x000000
-   "data" : [{<APISession object>}]
-}
-}}}
-
-`"data"` contains JSONArray with JSONObject representation of [Datatypes#API_Session API Session]
 
 ----
 
@@ -49,28 +43,22 @@ None
 || `email` || `String` || User's email ||
 || `password` || `String` || User's password ||
 
-*Returns HTTP code*
+*Returns data*
+1 Datatypes#API_Session API Session] structure.
 
-|| *HTTP code* || *meaning*||
-|| 200 || server understood request (login process could have failed though) || 
-|| 401 || loging failed. There is no guarantee that response has data with API error code ||
-|| any other || server unreachable, unable to respond ||
-
-*Returns API code*
+*Error codes*
 
 || *API CODE* || *meaning* ||
 || MSG_OK || successfuly logged in and started authenticated session ||
 || ERR_WRONG_LOGIN || wrong email address was as login || 
 || ERR_WRONG_PASS || wrong password (means login exists in a database) ||
 
-*Returns data (for MSG_OK)*
-{{{
-{
-   "code" : 0x000000
-   "data" : {<APISession object>}
-}
-}}}
+*Returns HTTP code*
 
+|| *HTTP code* || *meaning*||
+|| 200 || server understood request (login process could have failed though) || 
+|| 401 || loging failed. There is no guarantee that response has data with API error code ||
+|| any other || server unreachable, unable to respond ||
 
 ----
 
@@ -85,14 +73,15 @@ None
 || *parameter* || *type* ||*description* ||
 || session_key || String ||current user's session key (anonymous or authenticated) ||
 
-*Returns API code:*
+*Returns data:*
+
+Nothing
+
+*Error codes*
 
 || *API CODE* || *meaning* ||
 || MSG_OK || successful logut ||
 
-*Returns data:*
-
-None
 
 ----
 
