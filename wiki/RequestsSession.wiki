@@ -87,4 +87,40 @@ Nothing
 ----
 
 == Session Regiser ==
-TODO:
+|| request URL || *(HTTPS)* `/session/register/` || 
+|| method || *POST* ||
+|| description || Registration of new dood user. ||
+
+<font color="red"> _warning: currently we support HTTP and GET method in this request_ </font>
+
+*Prameters*
+|| *parameter* || *type* || *description* ||
+|| `email` || `String` || User's email ||
+|| `password` || `String` || User's password ||
+|| `sex` || `String` || `M` or `F` for Male or Female (non case-sensitive) default `M` ||
+|| `name` || `String` || User's name ||
+|| `surname` || `String` || User's surname ||
+|| `nickname` || `String` || User's nickname ||
+|| `birthdate` || `String` || User's birthdate. Format DDMMYYY ||
+|| `default_city` || `String` || User's default_city (non case-sensitive) default `WARSZAWA` ||
+
+*Returns data*
+
+1 [Datatypes#API_Session API Session] structure.
+
+*Error codes (for HTTP code 200)*
+
+|| *API CODE* || *meaning* ||
+|| MSG_OK || successfuly registered and started authenticated session ||
+|| ERR_LOGIN_EXISTS || email (login) is busy (registration failed) || 
+|| ERR_PASS_TOO_SIMPLE || password is too simple (registration failed) ||
+|| ERR_WRONG_EMAIL || wrong format of email (for instance no `@`) ||
+
+*Returns HTTP code*
+
+|| *HTTP code* || *meaning*||
+|| 200 || server understood request (registration process could have failed though) || 
+|| any other || server unable to respond ||
+
+_*Note*_
+  * Logika sprawdzania poprawności emaila (loginu) oraz stopnia trudności hasła powinna być zaimplementowana również po stronie klienta (by ograniczyć niepotrzebny transfer danych). Hasło powinno być minimalnie 6 znakowe. Email powinien mieć format `[a-zA-Z0-9]+[@]([a-zA-Z0-9]+[.])+[a-z]+`
