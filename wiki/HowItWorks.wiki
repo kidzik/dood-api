@@ -11,27 +11,11 @@ According to REST convention all requests are stated in the following form
 /object/action/
 }}}
 
-All responses are JSON dictionaries:
-{{{
-{
-    "code": 0,           // integer error/success code
-    "data": [            // dictionary of result structures
-    ]
-}
-}}}
+All responses have JSON format. See [DataExchangeStructure#Response_format  Response Structure] :
 
-If error code is 0 than HTTP response has code 200.
-Otherwise it is different than 200.
+  # If error code is 0 than HTTP response has code 200. Otherwise it is different than 200.
+  # All sessions must start with `/session/start/` `/session/login/` or `/session/register` for retriving `session_key`.
+  # All requests except those above must contain `session_key` as parameter.
+  # All retrived structures have header. See [Datatypes#Header header structure]
 
-All sessions must start with `/session/start/` for retriving `session_key`.
-All requests except `/session/start/` must contain `session_key` as parameter.
-
-All retrived structures have two fields
-
-|| *field* || *type* || *description* ||
-|| `id` || `Integer` || Object identifier unique within model ||
-|| `model` || `String` || Model name ||
-
-`id` and `model` uniquely define data object.
-
-In following documentation we assume those conditions and do not include them in each structure or request.
+*In following documentation we assume those conditions and do not include them in each structure or request.*
