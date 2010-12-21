@@ -2,17 +2,29 @@
 
 = Business requests =
 
-== `/business/get/` ==
-Starts session.
+Content:
+  * [RequestsBusiness#Business_Get Business Get]
 
-*Method:*
-GET
+== Business Get ==
+|| request URL || *(HTTP)* `/business/get/` || 
+|| method || *GET* ||
+|| description || request for [DatatypesBusiness Business object(s). Also used to search for businesses ||
 
 *Prameters:*
 || *parameter* || *type* || *description* ||
-|| `id` (optional) || `Integer` || Business id ||
-|| `what` (optional) || `String` || Search phraze ||
-|| `where` (optional) || `String` || Search location ||
+|| `session_key` || String || Current User's Session Key (anonymous or authenticated) ||
+|| _`ids`_  || `List<Long>` || Business ids list. CSV of IDs. ||
+|| _`what`_ || `String` || Search phraze ||
+|| _`where`_|| `String` || Search location ||
+|| _`category`_ || `List<Long>` || List of ids of categories (to narrow search results) ||
+|| _`page_number`_ || `Integer` || Page number of results (default and first page has number  1) ||
+|| _`short`_ || `Boolean` || True if you are asking for Short versions of [DatatypesBusiness Business objects]. default is `false` ||
 
 *Returns:*
-[DatatypesBusiness Business] structures.
+
+[DatatypesBusiness Business] structures in full or [DatatypesBusiness#Business_Short short form].
+
+*Note:*
+  * Jeśli w tym zapytaniu pojawi się pole `ids` całe pytanie zostanie potraktowane jako pytanie o konkretne businessy, a nie zapytanie „z wyszukiwarki”. Stąd obecność pola `ids` wyklucza pozostałe pola poza `session_key` (nie mają one sensu).
+
+  * Pole `short` jest opcjonalne. Nawet jeśli klient explicite poprosi o wersje skróconą może dostać postać pełną (i powinien ją poprawnie rozpoznać)
