@@ -26,7 +26,11 @@ Content:
 
 Data may contain not only objects requested directly by client. There might be also structures related to them. If for example client requests for Business object than he not only get Business structure, but also structures of Categories to which it belongs.
 
-(???) Dane w tablicy data są przesyłane z zachowaniem kolejności. W pierwszym rzędzie przesyłane są te dane, o które użytkownik poprosił, a dopiero później ewentualne dodatkowe obiekty. *Czy na pewno jest sens to wymuszac? I tak w `data` bedzie burdel.*. ( .. tu idea byla taka ze klient powinien cacheowac najpierw te obiekty o ktore poprosił .. żeby odśmiecarka cachea nie wywalila obiektu o ktory wlasnie poprosil ..stad jedyna kolejnosc to najpierw te obiekty o ktore prosil a potem inne)
+Dane w tablicy data są przesyłane z zachowaniem kolejności. W pierwszym rzędzie przesyłane są te dane, o które użytkownik poprosił, a dopiero później ewentualne dodatkowe obiekty.
+
+_discussion:_
+  * Czy na pewno jest sens to wymuszac? I tak w `data` bedzie _nieporzadek_ 
+  * tu idea byla taka ze klient powinien cache'owac najpierw te obiekty, o ktore poprosił .. żeby odśmiecarka cache'a nie wywalila obiektu o ktory wlasnie poprosil ..stad jedyna kolejnosc o ktora chodzi to najpierw te obiekty o ktore prosil, a potem inne)
 
 
 == Request format ==
@@ -36,7 +40,7 @@ API Request is either POST or GET HTTP request, with parameters in standard HTTP
 
 Almost every request has session key:
 
-|| `session_key` || Session key (must be given everywhere except /session/start/ request || 
+|| `session_key` || Session key (must be given everywhere except `/session/start/`, `/session/login/` and `/session/register/` requests || 
 
 Example of other parameters:
 
@@ -47,6 +51,7 @@ Example of other parameters:
 || up || JSONObject  z jednym obiektem który uaktualniamy (cały obiekt). Obiekt musi mieć wszystkie z pól id , version , type || 
 || del || JSONObject  z jednym obiektem który usuwamy (tylko nagłówek). Obiekt musi mieć wszystkie z pól id , version , type. || 
 </wiki:comment>
-
+<wiki:comment>
 *A czemu nie JSONArray z headerami .. przy id i version nie bedziesz znal typu ..  rozwiazanie z headerami jest chyba bardziej generyczne .. ja mam obiekt Header ktory extenduja wszystkie inne obiekty bazodanowe*
 Jest bardziej generyczne, ale niezgodne z konwencja HTTP. Mozemy ewentualnie napisac calkiem nowy wlasny protokol na socketach zamiast na HTTP. Ale to next time ;)
+</wiki:comment>
