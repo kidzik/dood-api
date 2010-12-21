@@ -7,12 +7,12 @@ Content:
 
 = Standard HTTP Codes =
 
-We try to keep standard meaning of all HTTP status codes. HTTP status codes are the 'first defense line' in our API.
+We try to keep [http://en.wikipedia.org/wiki/List_of_HTTP_status_codes standard meaning of all HTTP status codes]. 
 
 || *HTTP code* || *meaning* ||
 || *200* || *SC_OK*. it DOES NOT mean that operation was successful. It basically means that you need to look at API code to get information about error. It means only that server undestood your request properly. || 
-|| *401* || Authentication problems. The result data should still (but don't have to) be passed in response.||
-|| *any other* || server is down or unable respond. no data is passed (no guarantee) ||
+|| *401* || Authentication problems. The result data should still (but don't have to) be passed in the response.||
+|| *any other* || server is down, unable respond. no data is passed (nothing is guaranteed) ||
 
 Be aware of other HTTP errors which may occur. Especially errors >500.
 
@@ -42,7 +42,7 @@ Be aware of other HTTP errors which may occur. Especially errors >500.
 || *Code* || *Name* || *Description* || 
 || `0x000020` || `ERR_WRONG_LOGIN` || Incorrect e-mail || 
 || `0x000021` || `ERR_WRONG_PASS` || Incorrect password || 
-|| `0x000022` || `ERR_LOGIN_EXISTS` || E-mail exists || 
+|| `0x000022` || `ERR_LOGIN_EXISTS` || E-mail (login) exists || 
 || `0x000023` || `ERR_WRONG_EMAIL` || Email in wrong format. || 
 || `0x000024` || `ERR_PASS_TOO_SIMPLE` || Password is too simple. || 
 
@@ -50,13 +50,13 @@ Be aware of other HTTP errors which may occur. Especially errors >500.
 
 || *Code* || *Name* || *Description* || 
 || `0x000030` || `ERR_OBJECT_NOT_FOUND` ||  Object does not exist || 
-|| `0x000031` || `ERR_INCONSISTENCE` || 	Client has newer version of object than server. || 
+|| `0x000031` || `ERR_INCONSISTENCE` || Client has newer version of object than server. This should never happen because server decides about objects versions. || 
 
 == Localization errors ==
 
 || *Code* || *Name* || *Description* || 
 || `0x000040` || `ERR_ADDRESS_TRANSLATION` ||  Can't find location from given phraze || 
-|| `0x000041` || `ERR_REGION_NOT_SUPPORTED` || There is no data for given position || 
+|| `0x000041` || `ERR_REGION_NOT_SUPPORTED` || There is no data for given position.  || 
 
 == Synchronization and concurency errors ==
 
