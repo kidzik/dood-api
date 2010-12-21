@@ -49,3 +49,4 @@ Example of other parameters:
 </wiki:comment>
 
 *A czemu nie JSONArray z headerami .. przy id i version nie bedziesz znal typu ..  rozwiazanie z headerami jest chyba bardziej generyczne .. ja mam obiekt Header ktory extenduja wszystkie inne obiekty bazodanowe*
+Jest bardziej generyczne, ale niezgodne z konwencja HTTP. Mozemy ewentualnie napisac calkiem nowy wlasny protokol na socketach zamiast na HTTP. Ale to next time ;)
