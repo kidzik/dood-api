@@ -2,16 +2,26 @@
 
 = Category requests =
 
-== `/category/get/` ==
-Get children of category with given `parent_id`.
+Content: 
 
-*Method:*
-GET
+  * [RequestsCategory#Category_Get Category Get]
+
+== Category Get == 
+|| request URL || *(HTTP)* `/category/get/` || 
+|| method || *GET* ||
+|| description || Get children of category with given `parent_id`,whole list all together or specific (listed) objects ||
+
 
 *Prameters:*
-|| *parameter* || *type* || *description* || *default* ||
-|| `parent_id` (optional || `Integer` || Get children of category with given `parent_id` || `0` ||
-|| `recursive` (optional) || `Boolean` || Show all subcategories recursively || `TRUE` ||
+|| *parameter* || *type* || *description* ||
+|| `session_key` || String || User's current session key ||
+|| _`ids`_ || `List<Long>` || Get [DatatypesCategory category objects] of specific ids ||
+|| _`parent_id`_  || `Long` || Get children of category with given `parent_id` ||
+|| _`get_all`_ || Boolean || If `true` give all category objects || 
+
+_*NOTE:*_
+  * `parent_id=NULL` means children of `root` category element 
 
 *Returns:*
+
 [DatatypesCategory Category] structures.
