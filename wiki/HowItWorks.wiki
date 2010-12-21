@@ -2,7 +2,9 @@
 
 = Introduction =
 
-API for [http://dood.pl/ dood.pl] defines communication based on REST methodology. This document do not assume any specific server (or client) implementation, but we try to ensure that API works correctly on [http://dood.pl/api/ http://dood.pl/api/].
+API for [http://dood.pl/ dood.pl] defines communication based on REST methodology. This document do not assume any specific server (or client) implementation, but we try to ensure that API works correctly on:
+
+  * *[http://dood.pl/api/ http://dood.pl/api/]*
 
 = Convention =
 
@@ -11,11 +13,13 @@ According to REST convention all requests are stated in the following form
 /object/action/
 }}}
 
-All responses have JSON format. See [DataExchangeStructure#Response_format  Response Structure] :
+All responses have JSON format. Please refer to [DataExchangeStructure#Response_format  Response Structure] for details about data exchange structures.
 
-  # If error code is 0 than HTTP response has code 200. Otherwise it is different than 200.
+*Pre-Assumptions:*
+
+  # If error code is 0 than HTTP response has code 200. Otherwise it may be different than 200. We try to support [http://en.wikipedia.org/wiki/List_of_HTTP_status_codes standard HTTP error codes] and don't change their meanings. 
   # All sessions must start with `/session/start/` `/session/login/` or `/session/register` for retriving `session_key`.
-  # All requests except those above must contain `session_key` as parameter.
-  # All retrived structures have header. See [Datatypes#Header header structure]
+  # All requests except those mentioned above must contain `session_key` as parameter. Otherwise 401 HTTP error code is returned (this error is also returned if session expires).
+  # All retrived structures have header. Please refer to [Datatypes#Header header structure].
 
-*In following documentation we assume those conditions and do not include them in each structure or request.*
+*In following documentation we assume those conditions and we may not include them in each structure or request.*
