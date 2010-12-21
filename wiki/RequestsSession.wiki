@@ -101,7 +101,7 @@ Nothing
 || `name` || `String` || User's name ||
 || `surname` || `String` || User's surname ||
 || `nickname` || `String` || User's nickname ||
-|| `birthdate` || `String` || User's birthdate. Format DDMMYYY ||
+|| `birthdate` || `String` || User's birthdate. Format `DDMMYYYY` ||
 || `default_city` || `String` || User's default_city (non case-sensitive) default `WARSZAWA` ||
 
 *Returns data*
