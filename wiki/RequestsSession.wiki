@@ -38,7 +38,7 @@ None
 
 <font color="red"> _warning: currently we support HTTP and GET method in this request_ </font>
 
-*Prameters:*
+*Prameters*
 || *parameter* || *type* || *description* ||
 || `email` || `String` || User's email ||
 || `password` || `String` || User's password ||
@@ -69,12 +69,12 @@ None
 || description || Logouts user. ||
 
 
-*Prameters (GET):*
+*Prameters (GET)*
 
 || *parameter* || *type* ||*description* ||
 || session_key || String ||current user's session key (anonymous or authenticated) ||
 
-*Returns data:*
+*Returns data*
 
 Nothing
 
