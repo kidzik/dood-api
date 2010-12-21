@@ -1,5 +1,7 @@
-#summary One-sentence summary of this page.
+#summary Introduction to wiki.
 
 = Introduction =
 
-Http-based API for managing data in dood.pl service.
+Http-based REST API for managing data in [http://dood.pl dood] service.
+
+Uses JSON output format.
