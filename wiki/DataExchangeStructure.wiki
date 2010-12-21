@@ -10,6 +10,7 @@ Content:
 
 == Response format ==
 
+_example:_
 {{{
 {	
    "code"         : 243,
@@ -20,9 +21,9 @@ Content:
 
 
 || *Variable* || *Type* || *Description* || 
-|| `code` || `Integer` || Error code || 
-|| `message` (optional) || `String` || Error message || 
-|| `data` (optional) || `JSONArray` || Array of results. Structures of data objects. Always up-to-date - there is no way to get archive ones. || 
+|| `code` || `Integer` || Error code. Please refer to [ErrorCodes page about error codes] || 
+|| `message` (optional) || `String` || Error message. default language `English`. User-friendly format. || 
+|| `data` (optional) || `JSONArray` || Array of results. Structures of data objects. *Always up-to-date - there is no way to get archive ones.* || 
 
 Data may contain not only objects requested directly by client. There might be also structures related to them. If for example client requests for Business object than he not only get Business structure, but also structures of Categories to which it belongs.
 
@@ -39,7 +40,7 @@ API Request is either POST or GET HTTP request, with parameters in standard HTTP
 `param1=value1&param2=value2&...`
 
 Almost every request has session key:
-
+|| *parameter* || *description* || 
 || `session_key` || Session key (must be given everywhere except `/session/start/`, `/session/login/` and `/session/register/` requests || 
 
 Example of other parameters:
