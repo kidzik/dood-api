@@ -41,7 +41,7 @@ Almost every request has session key:
 Example of other parameters:
 
 || `ids` || string with ids of items that client want ||
-|| `has` || string with ids we already have in format `"id1,version1;id2;version2"` || 
+|| `has` || string with ids we already have in format `"TYPE1:id1,version1;id2;version2|TYPE2:id1,version1;id2;version2"` || 
 <wiki:comment>
 || `new` || JSONObject  z jednym obiektem który tworzymy . Obiekt powinien być pozbawiony pól id i version (te nadaje serwer) ale musi mieć pole type (typ tworzonego obiektu) ||
 || up || JSONObject  z jednym obiektem który uaktualniamy (cały obiekt). Obiekt musi mieć wszystkie z pól id , version , type || 
