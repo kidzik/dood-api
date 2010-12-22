@@ -16,4 +16,9 @@
 
   * Należy zwrócić uwagę, że pole businesses nie ma pola total_businesses. Przesyłamy od razu wszystkie obiekty na raz i nie można dopytać się o pozostałe obiekty na liście.
 
-  * See [RequestsLocation#Location_Set location set] request for details about handling this object.
+  * It is advisable that client application refreshes `AdvertProximity` object whenever  hearbeat function detects that:
+     # user has escaped radius of `AdvertProximity`
+     # `AdvertProximity` has expired
+     # `force refresh` has been sent from client application.
+
+  * Please refer to [RequestsLocation#Location_Set location set] request for details about handling this object.
