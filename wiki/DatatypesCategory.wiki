@@ -6,12 +6,13 @@
 || Nazwa typu || *`Category`* ||
 
 
-|| name || String || Nazwa kategorii || 
-|| parent || Long || ID rodzica || 
-|| _photo_ || String || URL do pliku z ikona kategorii ||
+|| name || `String` || category name || 
+|| parent || `Long` || parent ID || 
+|| _photo_ || `String` || URL of file with category icon ||
 
 *NOTE*
   * Categories are organized in a tree structure.
   * There is no separate _root_ element for category tree. Children of `root` will all have `JSON Null` object in `parent` field.
+  * `photo` can be either full URL or just location of file in [Datatypes#API_Session Photo server] 
 
 Obiekt Category przechowywany w pamięci lokalnej powinien mieć pole children ze wskaźnikami do wszystkich dzieci. Serwer aby wspierać szybką budowę drzewa kategorii powinien przesyłać obiekty Category w dobrej (wspierającej algorytm tworzenia drzewa) kolejności.
