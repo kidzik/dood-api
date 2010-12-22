@@ -61,9 +61,19 @@ Pole _deleted_ (opcjonalne) przesyłane jest tylko przez serwer. Przesłanie obi
 ==API Session==
 
 API Session object is send whenever new session is started. 
+|| *type (model)*||
+|| `APISession` ||
 
 || *field* || *type* || *description* ||
 || `photo_server` || `String` || URL of server with photos ||
 || `session_key` || `String` || session key ||
 || `id` || `String` || API key ||
 || `category_version` || Long || ms. from 1.01.1970 ||
+
+<font color="red">
+_warning: API Session object doesn't have version nor id but it MUST have type (model)_
+</font>
+
+_*NOTE:*_
+   * [DatatypesCategory Categories objects] don't have separate versions. There is one common version of whole category tree, these objects will not change often. Each time a client detects a change in `category_version` it shoult refresh whole category tree structure. 
+   * To prevent clients from using inconsistent category tree server will terminate all open session when there is a non-additive change in category tree structure.
