@@ -18,6 +18,7 @@ Content:
 || _`ids`_ || `List<Long>` || Get [DatatypesCategory category objects] of specific ids ||
 || _`parent_id`_  || `Long` || Get children of category with given `parent_id` ||
 || _`get_all`_ || Boolean || If `true` give all category objects || 
+|| _`has_version` || `Long` || <font color="red"> NOT SUPPORTED YET. </font> Client admits having category tree of given version. Server will update client's tree and try to limit the transfer. All retrieved objects should overwrite existing ones || 
 
 _*NOTE:*_
   * `parent_id=NULL` means children of `root` category element 
