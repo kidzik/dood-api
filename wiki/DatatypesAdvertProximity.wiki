@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Advert Proximity database object spec.
 
 =Proximity Advertisement=
 
@@ -8,10 +8,12 @@
 
 
 || businesses || `List<Long>` || Lista ID businessów w tej promocji. Lista powinna zawierać co najmniej jeden element (maksymalnie 50) || 
-|| expires || 	Long	|| Data wygaśnięcia promocji (ms. od 1.01.1970) || 
-|| latitude || 	Double || 	Szerokość geograficzna środka promocji || 
-|| longtitude || 	Double	|| Długość geograficzna środka promocji || 
-|| radius || 	Long || 	Promień funkcjonowania recenzji (w metrach) || 
-|| city	|| String || 	Miasto z którego zostały wybrane reklamy || 
+|| expires || 	`Long`	|| Data wygaśnięcia promocji (ms. od 1.01.1970) || 
+|| latitude || 	`Double` || Szerokość geograficzna środka promocji || 
+|| longtitude || `Double` || Długość geograficzna środka promocji || 
+|| radius || `Long` || 	Promień funkcjonowania promocji (w metrach) || 
+|| city	|| `String` || 	Miasto z którego zostały wybrane reklamy || 
 
   * Należy zwrócić uwagę, że pole businesses nie ma pola total_businesses. Przesyłamy od razu wszystkie obiekty na raz i nie można dopytać się o pozostałe obiekty na liście.
+
+  * See [RequestsLocation#Location_Set location set] request for details about handling this object.
