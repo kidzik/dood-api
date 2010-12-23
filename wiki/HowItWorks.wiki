@@ -18,7 +18,7 @@ All responses have JSON format. Please refer to [DataExchangeStructure#Response_
 *Pre-Assumptions:*
 
   # If error code is 0 than HTTP response has code 200. Otherwise it may be different than 200. We try to support [http://en.wikipedia.org/wiki/List_of_HTTP_status_codes standard HTTP error codes] and don't change their meanings. 
-  # All sessions must start with `/session/start/` `/session/login/` or `/session/register` for retriving `session_key`.
+  # All sessions must start with `/session/start/` for retriving `session_key`.
   # All requests except those mentioned above must contain `session_key` as parameter. Otherwise 401 HTTP error code is returned (this error is also returned if session expires).
   # All retrived structures have header. Please refer to [Datatypes#Header header structure].
 
