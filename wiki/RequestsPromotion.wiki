@@ -18,8 +18,9 @@ Content:
 || `only_open` (optional) || `Boolean` || Get only offers from currently open businesses.  ||
 || `categories` (optional) || `List<Long>` || CSV with IDs of categories. Filters search results. <font style="color: red">Currently unsuported</font> ||
 
-*Returns data*
-Promotions objects are returned.
+*Returns data:*
+
+[DatatypesPromotion Promotions] objects are returned.
 
 <wiki:comment>chyba nie warto pisac o tym w requestach
 <font color="red">
@@ -27,7 +28,7 @@ _*note:*_ first version of API will send all Business objects from the list in [
 </font>
 </wiki:comment>
 
-*Error codes*
+*Error codes:*
 
 || *API CODE* || *meaning* ||
 || MSG_OK || new location has been set ||
