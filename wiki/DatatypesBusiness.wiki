@@ -30,17 +30,17 @@ _*NOTE:*_
 
 ==Business Short==
 
-Short version of business structure (for search results).
+Short version of business structure (for search results). Contains only following fields:
 
-|| name || String ||
-|| longtitude || Double	||
-|| latitude || Double ||
-|| _photo_ || String ||
-|| _rating_ || Double ||
-|| _advert_ || String ||
-|| advert_date_ ||  Long || 
-|| _weight_ || Long ||
-|| _open_hours_ || String ||
+|| name ||
+|| longtitude ||
+|| latitude ||
+|| _photo_ ||
+|| _rating_ ||
+|| _advert_ ||
+|| advert_date_ ||  
+|| _weight_ ||
+|| _open_hours_ ||
 
 _*NOTE:*_
 
