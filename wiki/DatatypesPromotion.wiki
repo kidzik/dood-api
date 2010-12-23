@@ -2,7 +2,7 @@
 
 =Promotion=
 
-|| *Field* || *Type" || *Description* ||
+|| *Field* || *Type* || *Description* ||
 || business || `Long` || Business which set promotion || 
 || title || `String` || Promotion title || 
 || description || `String` || Promotion description || 
