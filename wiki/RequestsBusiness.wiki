@@ -19,6 +19,7 @@ Content:
 || `page_number`  || `Long` || Page number of results || `1` ||
 || `short`  || `Boolean` || True if you are asking for Short versions of [DatatypesBusiness Business objects] || `False` ||
 || `promotions`  || `Boolean` || Only businesses with promotions || `False` ||
+|| `full`  || `Boolean` || Response businesses in full form || `False` ||
 
 *Note:*
  * where might be in format `"latitude,longitude"`, for example `"53.1251,25.12455"`
