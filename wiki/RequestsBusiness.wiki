@@ -15,10 +15,10 @@ Content:
 || `ids` (optional)  || `List<Long>` || Business ids list. CSV of IDs. ||
 || `what` (optional) || `String` || Search phraze ||
 || `where` (optional) || `String` || Search location || default city for given session ||
-|| `category` || `List<Long>` || List of ids of categories (to narrow search results) ||
-|| `page_number` || `Long` || Page number of results || `1` ||
-|| `short` || `Boolean` || True if you are asking for Short versions of [DatatypesBusiness Business objects] || `False` ||
-|| `promotions`  || `Boolean` || Only businesses with promotions || `False` ||
+|| `category` (optional) || `List<Long>` || List of ids of categories (to narrow search results), all subcategories are automatically included. || `0` (all categories) ||
+|| `page_number` (optional) || `Long` || Page number of results || `1` ||
+|| `short` (optional) || `Boolean` || True if you are asking for Short versions of [DatatypesBusiness Business objects] || `False` ||
+|| `promotions` (optional) || `Boolean` || Only businesses with promotions || `False` ||
 
 *Note:*
  * where might be in format `"latitude,longitude"`, for example `"53.1251,25.12455"`
