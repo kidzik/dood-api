@@ -1,0 +1,10 @@
+#summary Promotion database object specification.
+
+=Promotion=
+
+|| Nazwa typu || *`Promotion`* ||
+
+|| *Field* || *Type" || *Description* ||
+|| businesses || `Long` || Business which set promotion || 
+|| Description || `String` || Promotion description || 
+|| expires || `Long` || Expire date of promotion || 
