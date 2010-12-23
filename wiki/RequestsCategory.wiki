@@ -14,6 +14,7 @@ Content:
 *Prameters:*
 
 NO ALE PO CO TO WSZYSTKO SKORO USTALILIŚMY, ŻE ŚCIĄGAMY CAŁOŚĆ??
+NIE PISZMY TU NIC NA ZAPAS!!!!!!!! Na zapas niech zostanie w docsie.
 
 || *parameter* || *type* || *description* ||
 || `session_key` || String || User's current session key ||
