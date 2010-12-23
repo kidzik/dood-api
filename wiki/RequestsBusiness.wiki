@@ -27,7 +27,7 @@ Content:
 
 [DatatypesBusiness Business] structures in full or [DatatypesBusiness#Business_Short short form].
 
-*Error codes (for HTTP code 200)*
+*Error codes:*
 
 || *API CODE* || *meaning* ||
 || MSG_OK || successfuly searched requested businesses ||
