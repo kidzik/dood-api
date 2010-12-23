@@ -2,29 +2,23 @@
 
 = Business=
 
-|| name || String || Nazwa businessu || 
-|| longtitude || 	Double || Długość geograficzna || 
-|| latitude	|| Double || Szerokość geograficzna || 
-|| _address_	|| String || Adres businessu || 
-|| _city_	|| String || Miasto businessu || 
-|| _phone_	|| String || Numer telefonu (kom lub stacjonarny) || 
-|| _rating_	|| Double || Rating lokalu (skala 0.0 – 5.0) domyślnie: 0 || 
-|| _www_ || String || Web Page || 
-|| _gallery_	|| Long || ID obiektu Gallery który przechowuje zdjęcia businessu || 
-|| _photo_	|| String || URL do jednego zdjęcia frontowego businessu || 
-|| _total_reviews_ || Int || Liczba wszystkich recenzji tego business || 
-|| _reviews_	|| `List<Long>` || Lista ID-ków recenzji tego businessu. CSV idków || 
-|| _advert_	|| String || Tekst reklamy frontowej (max 160 znaków) || 
-|| _advert_date_ || Long || Data wygaśnięcia reklamy frontowej (ms. Od 1.01.1970) || 
-|| _total_adverts_ || Long || Liczba wszystkich promocji businessu. || 
-|| _adverts_	|| `List<Long>` || CSV idków promocji tego businessu || 
-|| _weight_	|| Double || Waga businessu. (defaultowo 0) skala 0-1 || 
-|| _categories_	|| `List<Long>` || List ID-ków kategorii. String z CSV idków || 
-|| _open_hours_ || String || Open hours. format `HH:MM-HH:MM;HH:MM-HH:MM;....` for all 7 days ||
-
-_*NOTE:*_
-  * Brak pola `total_reviews` lub `total_adverts` oznacza brak jakichkolwiek recenzji bądź promocji (odpowiednio). W takiej sytuacji pole reviews oraz adverts i advert mogą nie być w ogóle czytane. 
-  * Reklama (promocja) frontowa jest też częścią listy promocji.
+|| *Field* || *Type* || *Description* || *Default* ||
+|| `name` || `String` || Business name || 
+|| `longitude` || `Double` || Longitude || 
+|| `latitude` || `Double` || Latitude || 
+|| `address`	|| `String` || Business address || 
+|| `city`	|| `String` || City || 
+|| `phone` || `String` || Phone number || 
+|| `rating` || `Double` || Rating (scale 1.0 – 5.0) || `Null` || 
+|| `www` || `String` || Web Page address || 
+|| `gallery` || `Long` || ID of gallery || 
+|| `photo` || `String` || ID of main photo || 
+|| `total_reviews` || `Long` || Number of reviews || 
+|| `reviews` || `List<Long>` || Reviews ID list || 
+|| `promotionss` || `List<Long>` || Promotions ID list || 
+|| `total_promotions` || `Long` || Number of all promotions. || 
+|| `categories` || `List<Long>` || List of categories to which business belongs || 
+|| `open_hours` || `String` || Open hours. format `HH:MM-HH:MM;HH:MM-HH:MM;....` for all 7 days ||
 
 ----
 
