@@ -10,10 +10,8 @@
   * [ErrorCodes Error Codes]
   * [Datatypes]
      * [DatatypesBusiness Business]
-     * [DatatypesPromotion Promotion]
      * [DatatypesCategory Category]
   * Requests
      * [RequestsSession Session]
-     * [RequestsPromotion Promotion]
      * [RequestsBusiness Business]
      * [RequestsCategory Category]
