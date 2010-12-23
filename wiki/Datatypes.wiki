@@ -13,7 +13,7 @@ Content:
    * [DatatypesAdvertProximity Advert Proximity]
    * [DatatypesCategory Category]
 
-
+<wiki:comment>
 == Introduction == 
 
 Przykładowy obiekt:
@@ -42,7 +42,7 @@ Pewnym wyjątkiem od tej reguły jest obiekt Gallery (przechowuje on w końcu li
   * Serwer każdorazowo interpretuje zapytanie w którym nie ma flagi page jako zapytanie o pierwszą stronę wyników.
   * Serwer decyduje o sposobie paginacji (ułożeniu wyników na liście) jak i o liczności konkretnych stron. Dopuszcza się tu „krótką” niespójność danych po stronie klienta w przypadku zmian ustawień lub danych.
   * Serwer może przesyłać w odpowiedzi na zapytanie o stronę jedynie nagłówek obiektu oraz uzupełnione IDki w polach z listą. Np. zapytanie o page=2,3 recenzji businessu o id 3 może zwrócić jedynie nagłówek tego businessu oraz pole reviews, w którym będą podane jedynie id-ki recenzji ze stron 2 oraz 3. Klient powinien złączyć listy, oraz ewentualnie usunąć powstałe w wyniku niespójności duble. 
-
+</wiki:comment>
 
 ==Header==
 
