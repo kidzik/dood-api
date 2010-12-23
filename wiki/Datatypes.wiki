@@ -5,8 +5,6 @@
 
 Content:
 
-   * [Datatypes#Introduction Introduction]
-   * [Datatypes#Interpretacja_list Interpretacja list]
    * [Datatypes#Header Header]
    * [Datatypes#API_Session API Session]
    * [DatatypesBusiness Business]
