@@ -6,5 +6,5 @@
 
 || *Field* || *Type" || *Description* ||
 || businesses || `Long` || Business which set promotion || 
-|| Description || `String` || Promotion description || 
+|| description || `String` || Promotion description || 
 || expires || `Long` || Expire date of promotion || 
