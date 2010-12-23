@@ -2,10 +2,6 @@
 
 = Business=
 
-|| Numer typu || *0* ||
-|| Nazwa typu || *`Business`* ||
-
-
 || name || String || Nazwa businessu || 
 || longtitude || 	Double || Długość geograficzna || 
 || latitude	|| Double || Szerokość geograficzna || 
