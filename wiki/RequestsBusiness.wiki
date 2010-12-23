@@ -21,7 +21,7 @@ Content:
 || _`short`_ || `Boolean` || True if you are asking for Short versions of [DatatypesBusiness Business objects]. default is `false` ||
 
 *Note:*
-* where might be in format latitude,longitude, for example `53.1251,25.12455`
+ * where might be in format latitude,longitude, for example `53.1251,25.12455`
 
 *Returns data:*
 
