@@ -30,15 +30,17 @@ _*NOTE:*_
 
 ==Business Short==
 
-|| name || String || Nazwa businessu || 
-|| longtitude || Double	|| Długość geograficzna || 
-|| latitude || Double || Szerokość geograficzna || 
-|| _photo_ || String || URL do jednego zdjęcia frontowego businessu || 
-|| _rating_ || Double || Rating lokalu (skala 0.0 – 5.0) || 
-|| _advert_ || String || Tekst reklamy frontowej (max 160 znaków) || 
-|| advert_date_ ||  Long || Data wygaśnięcia reklamy (ms. od 1.01.1970) || 
-|| _weight_ || Int || Waga businessu. (defaultowo 0) || 
-|| _open_hours_ || String || Open hours. format `HH:MM-HH:MM;HH:MM-HH:MM;....` for all 7 days ||
+Short version of business structure (for search results).
+
+|| name || String ||
+|| longtitude || Double	||
+|| latitude || Double ||
+|| _photo_ || String ||
+|| _rating_ || Double ||
+|| _advert_ || String ||
+|| advert_date_ ||  Long || 
+|| _weight_ || Long ||
+|| _open_hours_ || String ||
 
 _*NOTE:*_
 
