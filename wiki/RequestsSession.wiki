@@ -123,4 +123,4 @@ Nothing
 || any other || server unable to respond ||
 
 _*Note*_
-  * Logika sprawdzania poprawności emaila (loginu) oraz stopnia trudności hasła powinna być zaimplementowana również po stronie klienta (by ograniczyć niepotrzebny transfer danych). Hasło powinno być minimalnie 6 znakowe. Email powinien mieć format `[a-zA-Z0-9]+[@]([a-zA-Z0-9]+[.])+[a-z]+`
+  * Logika sprawdzania poprawności emaila (loginu) oraz stopnia trudności hasła powinna być zaimplementowana również po stronie klienta (by ograniczyć niepotrzebny transfer danych i przyspieszyć wykrycie błędu). Hasło powinno być minimalnie 6 znakowe. Email powinien być poprawnym adresem.
