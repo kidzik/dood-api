@@ -48,11 +48,11 @@ Pewnym wyjątkiem od tej reguły jest obiekt Gallery (przechowuje on w końcu li
 
 Każdy obiekt mapowany z bazy danych posiada nagłówek składający się z pól:
 
-|| *Field* || *Type* || *Description* || 
-|| `id`	|| `Long` || Unique in type identifier || 
-|| `type` || `String` || Name of object model (type) || 
-|| `version` || `Date` || Last edit date. UNIX format. || 
-|| `deleted` || `Boolean` || Object doesn't exists || 
+|| *Field* || *Type* || *Description* || *Default* ||
+|| `id`	|| `Long` || Unique in type identifier || ||
+|| `type` || `String` || Name of object model (type) || ||
+|| `version` || `Date` || Last edit date. UNIX format. || ||
+|| `deleted` (optional) || `Boolean` || Object doesn't exists || `False`||
 
 `id` and `type` uniquely define data object in database.
 
