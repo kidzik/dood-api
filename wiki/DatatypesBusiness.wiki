@@ -13,10 +13,10 @@
 || `www` || `String` || Web Page address || 
 || `gallery` || `Long` || ID of gallery || 
 || `photo` || `String` || ID of main photo || 
-|| `total_reviews` || `Long` || Number of reviews || 
+|| `total_reviews` (optional) || `Long` || Number of reviews || `0` || 
+|| `total_promotions` (optional) || `Long` || Number of all promotions. || `0` ||
 || `reviews` || `List<Long>` || Reviews ID list || 
 || `promotionss` || `List<Long>` || Promotions ID list || 
-|| `total_promotions` || `Long` || Number of all promotions. || 
 || `categories` || `List<Long>` || List of categories to which business belongs || 
 || `open_hours` || `String` || Open hours. format `HH:MM-HH:MM;HH:MM-HH:MM;....` for all 7 days ||
 
