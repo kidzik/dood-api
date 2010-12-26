@@ -50,7 +50,7 @@ Each object has following header:
 || `id`	|| `Long` || Unique in type identifier || ||
 || `type` || `String` || Name of object model (type) || ||
 || `version` (optional) || `Date` || Last edit date. UNIX format. || ||
-|| `deleted` (optional) || `Boolean` || Object doesn't exists || `False`||
+|| `deleted` (optional) || `Boolean` || Object doesn't exists || `Null`||
 
 `id` and `type` uniquely define data object in database.
 `version` is specified only where it makes any sense.
