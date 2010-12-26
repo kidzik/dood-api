@@ -16,3 +16,4 @@
      * [RequestsSession Session]
      * [RequestsBusiness Business]
      * [RequestsCategory Category]
+     * [RequestsPromotion Promotion]
