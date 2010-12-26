@@ -22,7 +22,7 @@ Content:
 || `full`  || `Boolean` || Response businesses in full form || `False` ||
 
 *Note:*
- * where might be in format `"latitude,longitude"`, for example `"53.1251,25.12455"`
+ * field `where` might be in format `"latitude,longitude"`, for example `"53.1251,25.12455"`
 
 *Returns data:*
 
