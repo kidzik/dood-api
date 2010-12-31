@@ -7,7 +7,7 @@
 
 
 || name || `String` || category name || 
-|| parent || `Long` || parent ID || 
+|| parent_id || `Long` || parent ID || 
 || _photo_ || `String` || URL of file with category icon ||
 
 <font color="red">
