@@ -1,0 +1,32 @@
+#summary Location requests.
+
+= Locationrequests =
+
+Content:
+  * [RequestsLocation#Location_Get Location Get]
+
+== Location Get ==
+
+|| request URL || *(HTTPS)* `/location/get/` || 
+|| method || *POST* ||
+|| description || request for [DatatypesLocation Location object]. ||
+
+<font color="red">
+*warning* currently we support GET and HTTP in this request
+</font>
+
+*Prameters:*
+|| *parameter* || *type* || *description* || *default* ||
+|| `longitude` || `Double` || Longitude || 
+|| `latitude` || `Double` || Latitude ||
+|| `default_city || String || || || Warszawa ||
+|| `get_promotions` || Boolean ||  || false ||
+|| `get_businesses` || Boolean || || false ||
+
+*Returns data:*
+
+One [DatatypesLocation Location] object and up to 20 [DatatypesPromotion Promotion] objects and [DatatypesBusiness Business] objects in total (only those listed in Location fields)
+
+*Error codes:*
+
+|| *API CODE* || *meaning* ||
