@@ -37,7 +37,7 @@ Content:
 
 *Examples:*
 
-`/business/get/?where=52.259,21.020`
+Query: `/business/get/?where=52.259,21.020`
 
 Returns:
 
@@ -49,7 +49,7 @@ data = [
 ]
 }}}
 
-`/business/get/?where=52.259,21.020&get_promotions=true&set_location=true`
+Query: `/business/get/?where=52.259,21.020&get_promotions=true&set_location=true`
 
 Returns:
 
