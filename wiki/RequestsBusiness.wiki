@@ -36,7 +36,9 @@ Content:
 || ERR_ADDRESS_TRANSLATION || Google was unable to translate address into location. User's default location could be taken under consideration (thus results could be not empty). _Only if `where` parameter was present._||
 
 *Examples:*
-`/business/get/?where=52.259,21.020
+
+`/business/get/?where=52.259,21.020`
+
 Returns:
 
 All businesses near latitude=52.259 and logintude=21.020
