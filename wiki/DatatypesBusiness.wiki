@@ -38,12 +38,6 @@ Short version of business structure (for search results). Contains only followin
 
 _*NOTE:*_
 
-  * Business Short jest tak naprawdę obiektem Business jednak w założeniu nie ma wszystkich danych które może mieć pełen obiekt Business. Jedyna różnica to polega na tym że klient może explicite poprosić o obiekt w okrojonej wersji (BusinessShort) poprzez dodanie flagi short=yes. Dodatkowo klient powinien wykrywać czy posiada wersje Short czy pełną. Obecność dowolnego pola nienależącego jedynie do wersji Short oznacza że dany obiekt jest w wersji pełnej (Business).
+  * Business Short is just Business object with some fields hidden (for better performence). Client should remember if he has short version and whenever user asks for more data it should get it from server using /business/get/ query.
 
-  * Nagłówek jest IDENTYCZNY jak nagłówek odpowiadającego obiektu typu Business. (to jest ten sam obiekt)
-
-  * Jest to krótsza wersja obiektu business potrzebna w celu szybkiego prezentowania krótkiej reklamy (np. w widgetach lub listach businessów)
-
-  * Klient powinien płynnie dostosować się do tych zmian w typie przesyłanych danych. Tzn jeśli prosi o obiekt short a dostanie pełen obiekt powinien rozpoznać go jako pełen obiekt. 
-
-  * Przy braku pola advert_date w sytuacji gdy obecne jest pole advert to klient sam podejmuje decyzje o czasie wyświetlania reklamy. Możliwym sposobem jest pamiętanie ostatniego czasu synchronizacji każdego obiektu i ustalenie arbitralnie maksymalnego czasu promocji w przypadku braku pola advert_date. Serwer natomiast powinien zadbać by pole advert_date było dostępne w przypadku wystąpienia pola advert.
+  * Business Short header is EXACTLY THE SAME as in corresponding Business (it is the same object).
