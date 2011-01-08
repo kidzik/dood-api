@@ -14,6 +14,7 @@
   * total number of ids in `promotions` and `businesses` cannot be larger than 20 
 
 *How to derive synchronizing frequency?*
+
 `activity` tells us how often data chenges for given location.
 `1` means that data is updated permanenty, and should be synchronized as many times as possible,
 `0` means thst we don't need to synchronize at all because it does not change at all.
