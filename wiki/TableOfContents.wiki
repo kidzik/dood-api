@@ -12,6 +12,7 @@
      * [DatatypesBusiness Business]
      * [DatatypesCategory Category]
      * [DatatypesPromotion Promotion]
+     * [DatatypesLocation Location]
   * Requests
      * [RequestsSession Session]
      * [RequestsBusiness Business]
