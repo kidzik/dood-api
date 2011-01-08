@@ -20,7 +20,6 @@ Content:
 || `short`  || `Boolean` || True if you are asking for Short versions of [DatatypesBusiness Business objects] || `False` ||
 || `get_promotions`  || `Boolean` || Show also business promotions in result (if exist) || `False` ||
 || `set_location`  || `Boolean` || Change current user sessionlocation to given in where (new location object will be attached in result) || `False` ||
-|| `full`  || `Boolean` || Response businesses in full form || `False` ||
 
 *Note:*
  * field `where` might be in format `"latitude,longitude"`, for example `"53.1251,25.12455"`
@@ -65,6 +64,6 @@ data = [
 }}}
 
 *Note:*
-  * Jeśli w tym zapytaniu pojawi się pole `ids` całe pytanie zostanie potraktowane jako pytanie o konkretne businessy, a nie zapytanie „z wyszukiwarki”. Stąd obecność pola `ids` wyklucza pozostałe pola poza `session_key` (nie mają one sensu).
+  * If the field `ids` is used in query it invalidates all other fields except to `session_key` because they make no sense in this context.
 
-  * Pole `short` jest opcjonalne. Nawet jeśli klient explicite poprosi o wersje skróconą może dostać postać pełną (i powinien ją poprawnie rozpoznać)
+  * Field `short` is optionalnal. If client asks for short version it may heppen that it gets the extended one and it must not be treated as an error.
