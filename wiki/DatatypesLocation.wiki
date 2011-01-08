@@ -17,9 +17,9 @@
 
 `activity` tells us how often data chenges for given location.
 `1` means that data is updated permanenty, and should be synchronized as many times as possible,
-`0` means thst we don't need to synchronize at all because it does not change at all.
+`0` means thst we don't need to synchronize because it does not change at all.
 
-Alghorithm of determining frequency depends on client. We don't provide suggested time becouse it depends on device capabilities - it should be more frequent with wi-fi and much less frequent with GPRS.
+Algorithm of determining frequency depends on client. We don't provide suggested time because it depends on device capabilities - for example it should be more frequent with wi-fi and much less frequent with GPRS.
 
 Example calculations for mobile in pseudo(C)code:
 {{{
