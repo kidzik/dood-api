@@ -38,20 +38,19 @@ Content:
 *Examples:*
 `/business/get/?where=52.259,21.020
 Returns:
+
 All businesses near latitude=52.259 and logintude=21.020
 {{{
 data = [
- {model="Business", ...., promotions=1,5},
- {model="Business", ...., promotions=16},
- {model="Promotion", id=1, ....},
- {model="Promotion", id=5, ....},
- {model="Promotion", id=16, ....},
- {model="Location", ...},
+ {model="Business", ...},
+ {model="Business", ...}
 ]
 }}}
 
 `/business/get/?where=52.259,21.020&get_promotions=true&set_location=true`
+
 Returns:
+
 {{{
 data = [
  {model="Business", ...., promotions=1,5},
@@ -59,7 +58,7 @@ data = [
  {model="Promotion", id=1, ....},
  {model="Promotion", id=5, ....},
  {model="Promotion", id=16, ....},
- {model="Location", ...},
+ {model="Location", ...}
 ]
 }}}
 
