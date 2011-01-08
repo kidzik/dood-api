@@ -36,8 +36,22 @@ Content:
 || ERR_ADDRESS_TRANSLATION || Google was unable to translate address into location. User's default location could be taken under consideration (thus results could be not empty). _Only if `where` parameter was present._||
 
 *Examples:*
-/business/get/?where=53.1231231,34.1231532&get_promotions=true&set_location=true
-Returns
+`/business/get/?where=52.259,21.020
+Returns:
+All businesses near latitude=52.259 and logintude=21.020
+{{{
+data = [
+ {model="Business", ...., promotions=1,5},
+ {model="Business", ...., promotions=16},
+ {model="Promotion", id=1, ....},
+ {model="Promotion", id=5, ....},
+ {model="Promotion", id=16, ....},
+ {model="Location", ...},
+]
+}}}
+
+`/business/get/?where=52.259,21.020&get_promotions=true&set_location=true`
+Returns:
 {{{
 data = [
  {model="Business", ...., promotions=1,5},
