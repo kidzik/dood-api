@@ -27,12 +27,10 @@ _example:_
 
 Data may contain not only objects requested directly by client. There might be also structures related to them. If for example client requests for Business object than he not only get Business structure, but also structures of Categories to which it belongs.
 
-Dane w tablicy data są przesyłane z zachowaniem kolejności. W pierwszym rzędzie przesyłane są te dane, o które użytkownik poprosił, a dopiero później ewentualne dodatkowe obiekty.
-
-_discussion:_
-  * Czy na pewno jest sens to wymuszac? I tak w `data` bedzie _nieporzadek_ 
-  * tu idea byla taka ze klient powinien cache'owac najpierw te obiekty, o ktore poprosił .. żeby odśmiecarka cache'a nie wywalila obiektu o ktory wlasnie poprosil ..stad jedyna kolejnosc o ktora chodzi to najpierw te obiekty o ktore prosil, a potem inne)
-
+Data is sent in following order:
+# requested data related with query (`/business/get/` gives Business objects)
+# requested additional data (`/business/get/?promotions=true` gives also Promotion objects)
+# additional data (`/business/get/?promotions=true` may also return Photo objects)
 
 == Request format ==
 
