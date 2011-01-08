@@ -36,7 +36,7 @@ None
 || method || *POST* ||
 || description || Logins user and starts authenticated session ||
 
-<font color="red"> _warning: currently we support HTTP and GET method in this request_ </font>
+<font color="red"> *Warning:* currently we support HTTP and GET method in this request</font>
 
 *Prameters*
 || *parameter* || *type* || *description* ||
@@ -91,7 +91,7 @@ Nothing
 || method || *POST* ||
 || description || Registration of new dood user. ||
 
-<font color="red"> _warning: currently we support HTTP and GET method in this request_ </font>
+<font color="red"> *Warning:* currently we support HTTP and GET method in this request </font>
 
 *Prameters*
 || *parameter* || *type* || *description* ||
