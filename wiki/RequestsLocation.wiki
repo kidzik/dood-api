@@ -19,7 +19,7 @@ Content:
 || *parameter* || *type* || *description* || *default* ||
 || `longitude` || `Double` || Longitude || 
 || `latitude` || `Double` || Latitude ||
-|| `default_city || String || || || Warszawa ||
+|| `default_city` || String || || || Warszawa ||
 || `get_promotions` || Boolean ||  || false ||
 || `get_businesses` || Boolean || || false ||
 
