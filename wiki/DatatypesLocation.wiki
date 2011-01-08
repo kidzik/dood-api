@@ -5,12 +5,29 @@
 || *Field* || *Type* || *Description* || *Default* ||
 || `longitude` || `Double` || Longitude || 
 || `latitude` || `Double` || Latitude ||
-|| `density` || `Double` || Density of location || TODO: default ||
+|| `activity` || `Double (0-1)` || used to determine frequency of synchronizing || TODO: default ||
 || `expires` || `Long` || ms from 1.01.1970 || 
 || `promotions` || `List<Long>` || CSV of ids of [DatatypesPromotion promotion] objects ||
 || `businesses` || `List<Long>` || CSV of ids of [DatatypesBusiness business] objects ||
 
-Note:
+*Note:*
   * total number of ids in `promotions` and `businesses` cannot be larger than 20 
 
-TODO: describe algorithm to calculate next heartbeat based on density, current position and expires ..and local user's preferences (mode)
+*How to derive synchronizing frequency?*
+`activity` tells us how often data chenges for given location.
+`1` means that data is updated permanenty, and should be synchronized as many times as possible,
+`0` means thst we don't need to synchronize at all because it does not change at all.
+
+Alghorithm of determining frequency depends on client. We don't provide suggested time becouse it depends on device capabilities - it should be more frequent with wi-fi and much less frequent with GPRS.
+
+Example calculations for mobile in pseudo(C)code:
+{{{
+double activity; // received from server
+int wifi;        // 1 for wifi, 0 for GPRS
+
+double time;     // frequency of update in hours
+double radius;   // update if user crossed this radius (in km)
+
+time = (2.0f - wifi) * (1.0f - activity);
+radius = (2.0f - wifi) * (1.0f - activity);
+}}}
