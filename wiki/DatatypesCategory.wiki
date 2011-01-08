@@ -14,9 +14,7 @@
 _warning: category object doesn't have version field (from header). See [Datatypes#API_Session API Session].
 </font>
 
-*NOTE*
+*Note:*
   * Categories are organized in a tree structure.
   * There is separate _root_ element for category tree with id=0. Children of `root` will all have `0` object in `parent` field. `root` has parent `null`.
   * `photo` can be either full URL or just location of file in [Datatypes#API_Session Photo server] 
-
-Obiekt Category przechowywany w pamięci lokalnej powinien mieć pole children ze wskaźnikami do wszystkich dzieci. Serwer aby wspierać szybką budowę drzewa kategorii powinien przesyłać obiekty Category w dobrej (wspierającej algorytm tworzenia drzewa) kolejności.
