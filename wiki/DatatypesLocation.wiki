@@ -13,4 +13,4 @@
 Note:
   * total number of ids in `promotions` and `businesses` cannot be larger than 20 
 
-TODO: describe algorithm to calculate next heartbeat based on density, current position and expires
+TODO: describe algorithm to calculate next heartbeat based on density, current position and expires ..and local user's preferences (mode)
