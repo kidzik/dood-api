@@ -65,8 +65,6 @@ data = [
 }}}
 
 *Note:*
-  * Example 
-
   * Jeśli w tym zapytaniu pojawi się pole `ids` całe pytanie zostanie potraktowane jako pytanie o konkretne businessy, a nie zapytanie „z wyszukiwarki”. Stąd obecność pola `ids` wyklucza pozostałe pola poza `session_key` (nie mają one sensu).
 
   * Pole `short` jest opcjonalne. Nawet jeśli klient explicite poprosi o wersje skróconą może dostać postać pełną (i powinien ją poprawnie rozpoznać)
