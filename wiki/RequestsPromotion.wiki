@@ -31,16 +31,16 @@ _*note:*_ first version of API will send all Business objects from the list in [
 *Error codes:*
 
 || *API CODE* || *meaning* ||
-|| MSG_OK || new location has been set ||
-|| ERR_REGION_NOT_SUPPORTED || coordinates are to far from any database entry. `default_city` parameter has been considered. || 
+|| `MSG_OK` || new location has been set ||
+|| `ERR_REGION_NOT_SUPPORTED` || coordinates are to far from any database entry. `default_city` parameter has been considered. || 
 
 <wiki:comment>O tym tez nie warto pisac bo dla kazdego requesta jest identycznie
 *Returns HTTP code*
 
 || *HTTP code* || *meaning*||
-|| 200 || server understood request || 
-|| 401 || session_key not present or expired ||
-|| any other || server unreachable, unable to respond ||
+|| `200 || server understood request || 
+|| `401` || session_key not present or expired ||
+|| `any other` || server unreachable, unable to respond ||
 
 _warning: data array can be empty (but data field should be present in the reponse)._
 
