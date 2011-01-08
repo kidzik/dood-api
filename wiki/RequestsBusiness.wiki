@@ -55,8 +55,8 @@ Returns:
 
 {{{
 data = [
- {model="Business", ...., promotions=1,5},
- {model="Business", ...., promotions=16},
+ {model="Business", ...., promotions="1,5"},
+ {model="Business", ...., promotions="16"},
  {model="Promotion", id=1, ....},
  {model="Promotion", id=5, ....},
  {model="Promotion", id=16, ....},
