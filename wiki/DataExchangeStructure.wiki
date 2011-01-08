@@ -28,9 +28,9 @@ _example:_
 Data may contain not only objects requested directly by client. There might be also structures related to them. If for example client requests for Business object than he not only get Business structure, but also structures of Categories to which it belongs.
 
 Data is sent in following order:
-# requested data related with query (`/business/get/` gives Business objects)
-# requested additional data (`/business/get/?promotions=true` gives also Promotion objects)
-# additional data (`/business/get/?promotions=true` may also return Photo objects)
+ # requested data related with query (`/business/get/` gives Business objects)
+ # requested additional data (`/business/get/?promotions=true` gives also Promotion objects)
+ # additional data (`/business/get/?promotions=true` may also return Photo objects)
 
 == Request format ==
 
