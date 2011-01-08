@@ -1,0 +1,16 @@
+#summary Location database object spec.
+
+= Location =
+
+|| *Field* || *Type* || *Description* || *Default* ||
+|| `longitude` || `Double` || Longitude || 
+|| `latitude` || `Double` || Latitude ||
+|| `density` || `Double` || Density of location || TODO: default ||
+|| `expires` || `Long` || ms from 1.01.1970 || 
+|| `promotions` || `List<Long>` || CSV of ids of [DatatypesPromotion promotion] objects ||
+|| `businesses` || `List<Long>` || CSV of ids of [DatatypesBusiness business objects ||
+
+Note:
+  * total number of ids in `promotions` and `businesses` cannot be larger than 20 
+
+TODO: describe algorithm to calculate next heartbeat based on density, current position and expires
