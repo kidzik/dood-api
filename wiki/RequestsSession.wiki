@@ -40,8 +40,8 @@ None
 
 *Prameters*
 || *parameter* || *type* || *description* ||
-|| `email` || `String` || User's email ||
-|| `password` || `String` || User's password ||
+|| `email` || `String` || User's email. Must be valid email in format name@domain. ||
+|| `password` || `String` || User's password. At least 6 characters. ||
 
 *Returns data*
 
@@ -123,4 +123,4 @@ Nothing
 || any other || server unable to respond ||
 
 _*Note*_
-  * Logika sprawdzania poprawności emaila (loginu) oraz stopnia trudności hasła powinna być zaimplementowana również po stronie klienta (by ograniczyć niepotrzebny transfer danych i przyspieszyć wykrycie błędu). Hasło powinno być minimalnie 6 znakowe. Email powinien być poprawnym adresem.
+  * Field verifier (for email and password) should be also implemented on client-side for optimizing transfer.
