@@ -12,7 +12,7 @@ Content:
 || description || request for [DatatypesLocation Location object]. ||
 
 <font color="red">
-*warning* currently we support GET and HTTP in this request
+*Warning:* Currently we support GET and HTTP in this request
 </font>
 
 *Prameters:*
