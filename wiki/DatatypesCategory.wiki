@@ -8,7 +8,7 @@
 || _photo_ || `String` || URL of file with category icon ||
 
 <font color="red">
-_warning: category object doesn't have version field (from header). See [Datatypes#API_Session API Session].
+*Warning:* category object doesn't have version field (from header). See [Datatypes#API_Session API Session].
 </font>
 
 *Note:*
