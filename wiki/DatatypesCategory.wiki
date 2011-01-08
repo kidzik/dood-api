@@ -2,10 +2,7 @@
 
 =Category=
 
-|| Numer typu || *60* ||
-|| Nazwa typu || *`Category`* ||
-
-
+|| *Field* || *Type* || *Description* ||
 || name || `String` || category name || 
 || parent_id || `Long` || parent ID || 
 || _photo_ || `String` || URL of file with category icon ||
