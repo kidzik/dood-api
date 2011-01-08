@@ -6,9 +6,6 @@
 || `longitude` || `Double` || Longitude || 
 || `latitude` || `Double` || Latitude ||
 || `activity` || `Double (0-1)` || used to determine frequency of synchronizing ||
-|| `expires` || `Long` || ms from 1.01.1970 || 
-|| `promotions` || `List<Long>` || CSV of ids of [DatatypesPromotion promotion] objects ||
-|| `businesses` || `List<Long>` || CSV of ids of [DatatypesBusiness business] objects ||
 
 *Note:*
   * total number of ids in `promotions` and `businesses` cannot be larger than 20 
