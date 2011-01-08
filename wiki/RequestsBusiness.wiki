@@ -18,7 +18,8 @@ Content:
 || `category`  || `List<Long>` || List of ids of categories (to narrow search results), all subcategories are automatically included. || `0` (all categories) ||
 || `page_number`  || `Long` || Page number of results || `1` ||
 || `short`  || `Boolean` || True if you are asking for Short versions of [DatatypesBusiness Business objects] || `False` ||
-|| `promotions`  || `Boolean` || Only businesses with promotions || `False` ||
+|| `get_promotions`  || `Boolean` || Show also business promotions in result (if exist) || `False` ||
+|| `set_location`  || `Boolean` || Change current user sessionlocation to given in where (new location object will be attached in result) || `False` ||
 || `full`  || `Boolean` || Response businesses in full form || `False` ||
 
 *Note:*
@@ -34,7 +35,23 @@ Content:
 || MSG_OK || successfuly searched requested businesses ||
 || ERR_ADDRESS_TRANSLATION || Google was unable to translate address into location. User's default location could be taken under consideration (thus results could be not empty). _Only if `where` parameter was present._||
 
+*Examples:*
+/business/get/?where=53.1231231,34.1231532&get_promotions=true&set_location=true
+Returns
+{{{
+data = [
+ {model="Business", ...., promotions=1,5},
+ {model="Business", ...., promotions=16},
+ {model="Promotion", id=1, ....},
+ {model="Promotion", id=5, ....},
+ {model="Promotion", id=16, ....},
+ {model="Location", ...},
+]
+}}}
+
 *Note:*
+  * Example 
+
   * Jeśli w tym zapytaniu pojawi się pole `ids` całe pytanie zostanie potraktowane jako pytanie o konkretne businessy, a nie zapytanie „z wyszukiwarki”. Stąd obecność pola `ids` wyklucza pozostałe pola poza `session_key` (nie mają one sensu).
 
   * Pole `short` jest opcjonalne. Nawet jeśli klient explicite poprosi o wersje skróconą może dostać postać pełną (i powinien ją poprawnie rozpoznać)
