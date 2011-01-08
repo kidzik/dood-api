@@ -19,8 +19,6 @@ Content:
 || `get_all` || Boolean || If `true` give all category objects || 
 
 <wiki:comment>
-|| `ids` || `List<Long>` || Get [DatatypesCategory category objects] of specific ids ||
-|| `has_version` || `Long` || <font color="red"> NOT SUPPORTED YET. </font> Client admits having category tree of given version. Server will update client's tree and try to limit the transfer. All retrieved objects should overwrite existing ones || 
 </wiki:comment>
 
 _*NOTE:*_
