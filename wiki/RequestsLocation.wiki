@@ -19,8 +19,8 @@ Content:
 || *parameter* || *type* || *description* || *default* ||
 || `longitude` || `Double` || Longitude || 
 || `latitude` || `Double` || Latitude ||
-|| `default_city` || String || || || Warszawa ||
-|| `get_promotions` || Boolean ||  || false ||
+|| `default_city` || String || || Warszawa ||
+|| `get_promotions` || Boolean || || false ||
 || `get_businesses` || Boolean || || false ||
 
 *Returns data:*
