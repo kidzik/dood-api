@@ -34,7 +34,7 @@ Data is sent in following order:
  # requested additional data (`/business/get/?promotions=true` gives also Promotion objects)
  # additional data (`/business/get/?promotions=true` may also return Photo objects)
 
-It is important to remember that due to TCP/IP protocol we can't be sure that responses will come in the same order as requests. Concerning this issue, we provided `request_id` for clients that derive data simultaneously.
+It is important to remember that due to TCP/IP protocol limitations we can't be sure that responses will come in the same order as requests. Concerning this issue, we provided `request_id` for clients that derive data simultaneously.
 
 == Request format ==
 
