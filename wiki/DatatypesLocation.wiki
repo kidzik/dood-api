@@ -6,6 +6,8 @@
 || `longitude` || `Double` || Longitude || 
 || `latitude` || `Double` || Latitude ||
 || `activity` || `Double (0-1)` || used to determine frequency of synchronizing ||
+|| `city` || `String` || City from which businesses and promotions were taken ||
+|| `default_city_used` (optional) || `Boolean` || if `true` then requested location was too far away from any business in a database ||
 
 *Note:*
   * total number of ids in `promotions` and `businesses` cannot be larger than 20 
