@@ -1,6 +1,6 @@
 #summary Location requests.
 
-= Locationrequests =
+= Location requests =
 
 Content:
   * [RequestsLocation#Location_Get Location Get]
