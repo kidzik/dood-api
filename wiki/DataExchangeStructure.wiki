@@ -15,7 +15,8 @@ _example:_
 {	
    "code"         : 243,
    "message"      : "Description",
-   "data"         : []}
+   "data"         : []
+}
 }}}
 
 
