@@ -4,8 +4,7 @@
 =Table Of Contents=
 
 
-  * [Introduction]
-     * [HowItWorks How does dood-api works?]
+  * [HowItWorks Introduction]
   * [DataExchangeStructure Generic Data Exchange Structure]
   * [ErrorCodes Error Codes]
   * [Datatypes]
