@@ -18,7 +18,10 @@ Content:
 
 *Parameters*
 
-None
+_system_ .. values: 
+  * *android*
+  * *ios*
+  * *symbian*
 
 *Returns data*
 
@@ -42,6 +45,7 @@ None
 || *parameter* || *type* || *description* ||
 || `email` || `String` || User's email. Must be valid email in format name@domain. ||
 || `password` || `String` || User's password. At least 6 characters. ||
+|| `system` || `String` || operating system values: android, ios, symbian... ||
 
 *Returns data*
 
