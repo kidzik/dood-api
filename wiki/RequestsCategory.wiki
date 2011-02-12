@@ -17,6 +17,7 @@ Content:
 || `session_key` || String || User's current session key ||
 || `parent_id`  || `Long` || Get children of category with given `parent_id` ||
 || `get_all` || Boolean || If `true` give all category objects || 
+|| `get_top` || Boolean || If `true` give all category objects from the top level || 
 
 <wiki:comment>
 has-version - <font color="red"> NOT SUPPORTED YET. </font> Client admits having category tree of given version. Server will update client's tree and try to limit the transfer. All retrieved objects should overwrite existing ones 
