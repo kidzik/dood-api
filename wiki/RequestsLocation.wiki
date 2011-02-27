@@ -20,12 +20,10 @@ Content:
 || `longitude` || `Double` || Longitude || 
 || `latitude` || `Double` || Latitude ||
 || `default_city` || String || || Warszawa ||
-|| `get_promotions` || Boolean || || false ||
-|| `get_businesses` || Boolean || || false ||
 
 *Returns data:*
 
-One [DatatypesLocation Location] object and up to 20 [DatatypesPromotion Promotion] objects and [DatatypesBusiness Business] objects in total (only those listed in Location fields)
+One [DatatypesLocation Location] object.
 
 *Error codes:*
 
