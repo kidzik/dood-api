@@ -15,7 +15,7 @@ Content:
 || `ids`   || `List<Long>` || Business ids list. CSV of IDs. || `Null` ||
 || `what`  || `String` || Search phraze || `Null` ||
 || `where`  || `String` || Search location || default city for given session ||
-|| `category`  || `List<Long>` || List of ids of categories (to narrow search results), all subcategories are automatically included. || `0` (all categories) ||
+|| `categories`  || `List<Long>` || List of ids of categories (to narrow search results), all subcategories are automatically included. || `0` (all categories) ||
 || `page_number`  || `Long` || Page number of results || `1` ||
 || `short`  || `Boolean` || True if you are asking for Short versions of [DatatypesBusiness Business objects] || `False` ||
 || `get_promotions`  || `Boolean` || Show also business promotions in result (if exist) || `False` ||
