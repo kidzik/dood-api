@@ -1,0 +1,8 @@
+# Promotion #
+
+| **Field** | **Type** | **Description** |
+|:----------|:---------|:----------------|
+| business | `Long` | Business which set promotion |
+| title | `String` | Promotion title |
+| description | `String` | Promotion description |
+| expires | `Long` | Expire date of promotion |

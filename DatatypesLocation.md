@@ -1,0 +1,32 @@
+# Location #
+
+| **Field** | **Type** | **Description** |
+|:----------|:---------|:----------------|
+| `longitude` | `Double` | Longitude |
+| `latitude` | `Double` | Latitude |
+| `activity` | `Double (0-1)` | used to determine frequency of synchronizing |
+| `city` | `String` | City from which businesses and promotions were taken |
+| `default_city_used` (optional) | `Boolean` | if `true` then requested location was too far away from any business in a database |
+
+**Note:**
+  * total number of ids in `promotions` and `businesses` cannot be larger than 20
+
+**How to derive synchronizing frequency?**
+
+`activity` tells us how often data chenges for given location.
+`1` means that data is updated permanenty, and should be synchronized as often as possible,
+`0` means thst we don't need to synchronize because it does not change at all.
+
+Algorithm of determining frequency depends on client. We don't provide suggested time because it depends on device capabilities - for example it should be more frequent with wi-fi and much less frequent with GPRS.
+
+Example calculations for mobile in pseudo(C)code:
+```
+double activity; // received from server
+int wifi;        // 1 for wifi, 0 for GPRS
+
+double time;     // frequency of update in hours
+double radius;   // update if user crossed this radius (in km)
+
+time = (2.0f - wifi) * (1.0f - activity);
+radius = (2.0f - wifi) * (1.0f - activity);
+```

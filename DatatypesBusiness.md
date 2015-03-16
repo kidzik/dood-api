@@ -1,0 +1,45 @@
+# Business #
+
+| **Field** | **Type** | **Description** | **Default** |
+|:----------|:---------|:----------------|:------------|
+| `name` | `String` | Business name |
+| `longitude` | `Double` | Longitude |
+| `latitude` | `Double` | Latitude |
+| `address`	| `String` | Business address |
+| `city`	| `String` | City |
+| `phone` | `String` | Phone number |
+| `rating` | `Double` | Rating (scale 1.0 – 5.0) | `Null` |
+| `www` | `String` | Web Page address |
+| `gallery` | `Long` | ID of gallery |
+| `photo` | `String` | ID of main photo |
+| `total_reviews` (optional) | `Long` | Number of reviews | `0` |
+| `total_promotions` (optional) | `Long` | Number of all promotions. | `0` |
+| `reviews` | `List<Long>` | Reviews ID list |
+| `promotionss` | `List<Long>` | Promotions ID list |
+| `categories` | `List<Long>` | List of categories to which business belongs |
+| `open_hours` | `String` | Open hours. format `HH:MM-HH:MM;HH:MM-HH:MM;....` for all 7 days |
+
+
+---
+
+
+## Business Short ##
+
+Short version of business structure (for search results). Contains only following fields:
+
+| name |
+|:-----|
+| longtitude |
+| latitude |
+| _photo_ |
+| _rating_ |
+| _advert_ |
+| advert\_date|
+| _weight_ |
+| _open\_hours_ |
+
+_**NOTE:**_
+
+  * Business Short is just Business object with some fields hidden (for better performence). Client should remember if he has short version and whenever user asks for more data it should get it from server using /business/get/ query.
+
+  * Business Short header is EXACTLY THE SAME as in corresponding Business (it is the same object).

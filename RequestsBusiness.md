@@ -1,0 +1,70 @@
+# Business requests #
+
+Content:
+  * [Business Get](RequestsBusiness#Business_Get.md)
+
+## Business Get ##
+| request URL | **(HTTP)** `/business/get/` |
+|:------------|:----------------------------|
+| method | **GET** |
+| description | request for [Business object(s)](DatatypesBusiness.md). Also used to search for businesses |
+
+**Prameters:**
+| **parameter** | **type** | **description** | **default** |
+|:--------------|:---------|:----------------|:------------|
+| `ids`   | `List<Long>` | Business ids list. CSV of IDs. | `Null` |
+| `what`  | `String` | Search phraze | `Null` |
+| `where`  | `String` | Search location | default city for given session |
+| `categories`  | `List<Long>` | List of ids of categories (to narrow search results), all subcategories are automatically included. | `0` (all categories) |
+| `page_number`  | `Long` | Page number of results | `1` |
+| `short`  | `Boolean` | True if you are asking for Short versions of [Business objects](DatatypesBusiness.md) | `False` |
+| `get_promotions`  | `Boolean` | Show also business promotions in result (if exist) | `False` |
+| `set_location`  | `Boolean` | Change current user sessionlocation to given in where (new location object will be attached in result) | `False` |
+
+**Note:**
+  * field `where` might be in format `"latitude,longitude"`, for example `"53.1251,25.12455"`
+
+**Returns data:**
+
+[Business](DatatypesBusiness.md) structures in full or [short form](DatatypesBusiness#Business_Short.md).
+
+**Error codes:**
+
+| **API CODE** | **meaning** |
+|:-------------|:------------|
+| MSG\_OK | successfuly searched requested businesses |
+| ERR\_ADDRESS\_TRANSLATION | Google was unable to translate address into location. User's default location could be taken under consideration (thus results could be not empty). _Only if `where` parameter was present._|
+
+**Examples:**
+
+Query: `/business/get/?where=52.259,21.020`
+
+Returns:
+
+All businesses near latitude=52.259 and logintude=21.020
+```
+data = [
+ {model="Business", ...},
+ {model="Business", ...}
+]
+```
+
+Query: `/business/get/?where=52.259,21.020&get_promotions=true&set_location=true`
+
+Returns:
+
+```
+data = [
+ {model="Business", ...., promotions="1,5"},
+ {model="Business", ...., promotions="16"},
+ {model="Promotion", id=1, ....},
+ {model="Promotion", id=5, ....},
+ {model="Promotion", id=16, ....},
+ {model="Location", ...}
+]
+```
+
+**Note:**
+  * If the field `ids` is used in query it invalidates all other fields except to `session_key` because they make no sense in this context.
+
+  * Field `short` is optionalnal. If client asks for short version it may heppen that it gets the extended one and it must not be treated as an error.

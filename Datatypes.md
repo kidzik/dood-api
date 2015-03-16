@@ -1,0 +1,78 @@
+# Data types #
+
+Content:
+
+  * [Header](Datatypes#Header.md)
+  * [API Session](Datatypes#API_Session.md)
+  * [Business](DatatypesBusiness.md)
+  * [Advert Proximity](DatatypesAdvertProximity.md)
+  * [Category](DatatypesCategory.md)
+
+<a href='Hidden comment: 
+== Introduction ==
+
+Przykładowy obiekt:
+
+|| Nazwa Pola Wymaganego || Typ pola || Opis ||
+|| _Nazwa Pola NIE Wymaganego_ || Typ pola || Opis ||
+
+_UWAGA:_  wymóg obecności pola dotyczy ostatecznej informacji klienta o danym obiekcie. Serwer może przesyłać niepełne dane o obiektach jednak musi mieć wtedy pewność (za pomocą mechanizmu wersjonowania – pole version) że klient posiada świeże dane we wszystkich innych polach wymaganych.
+
+Brak któregokolwiek pola wymaganego powinien skutkować odrzuceniem obiektu przez klienta API i ewentualnie wysłaniem raportu o błędzie.
+Każdy obiekt mapowany z bazy danych ma określony numer typu i nazwę która przekazywana jest w polu o nazwie type i typie String znajdującym się wewnątrz przesyłanego obiektu. Pole to jest wymagane.
+
+Pole typu List<Long> interpretowane jest w przypadku JSONa jako String z wartościami oddzielonymi przecinkami (CSV)
+
+Obiekt *FRONTOWY* jest wyróżniony spośród innych obiektów znajdujących się na liście. Wyróżnienie odbywa się przez umieszczenie go na pierwszym miejscu w przesyłanej liście. Np. _Business_ ma frontową recenzję tj. znajdującą się na pierwszym miejscu na liście. Galeria może mieć frontowy obrazek.
+
+
+==Interpretacja List==
+
+Przy modelowaniu obiektów często korzysta się z koncepcji listy. Business może mieć listę recenzji, użytkownik może mieć listę znajomych itd. Wprowadzenie jednego ogólnego typu List było dyskutowane przez twórców tego dokumentu i ostatecznie podjęto decyzje o niewprowadzaniu tego typu jako oddzielnej części API. Stworzyłoby to sztuczny obiekt który pomimo klarownego wydzielenia jego funkcjonalności były nieczytelny przy analizowaniu konkretnych zapytań w określonym czasie działania aplikacji.  Wszystkie funkcje listy z powodzeniem mogą przejąć obiekty, które miały mieć podczepione pod siebie listy. Decyzje o wprowadzeniu osobnych obiektów typu List na poziomie aplikacji klienckich pozostawiamy w gestii twórców tych aplikacji.
+
+Pewnym wyjątkiem od tej reguły jest obiekt Gallery (przechowuje on w końcu listę zdjęć). Obiekt ten jednak niesie w sobie również inne informacje specyficzne dla konkretnego zestawu zdjęć, stąd decyzja o jego wydzieleniu.
+
+*BARDZO WAŻNĄ KWESTIĄ* jest rozdzielenie licznika obiektów znajdujących się w liście (nazwa zmiennej zaczyna się od total np. total_reviews) od samej listy (nazwa pola to drugi człon nazwy licznika w tym wypadku reviews w liczbie mnogiej). Licznik obiektów na liście musi zawsze wskazywać poprawną i aktualną wartość. Zmienna przechowująca samą listę idków już nie. W sytuacji gdyby jeden Business miał kilka tysięcy recenzji prowadziłoby to do przesyłania dużej ilości niepotrzebnych danych (użytkownicy rzadko czytaliby wszystkie recenzje). By uniknąć takiej ewentualności wprowadzony został system paginacji. Klient może zapytać serwer o kolejną partie obiektów z listy. Zapytanie o konkretną stronę/strony odbywa się poprzez dodanie do zapytania o listę flagi page=xxx. Gdzie zamiast xxx wstawiane są oddzielone przecinkami numery stron, o które prosi klient.
+
+* Serwer każdorazowo interpretuje zapytanie w którym nie ma flagi page jako zapytanie o pierwszą stronę wyników.
+* Serwer decyduje o sposobie paginacji (ułożeniu wyników na liście) jak i o liczności konkretnych stron. Dopuszcza się tu „krótką” niespójność danych po stronie klienta w przypadku zmian ustawień lub danych.
+* Serwer może przesyłać w odpowiedzi na zapytanie o stronę jedynie nagłówek obiektu oraz uzupełnione IDki w polach z listą. Np. zapytanie o page=2,3 recenzji businessu o id 3 może zwrócić jedynie nagłówek tego businessu oraz pole reviews, w którym będą podane jedynie id-ki recenzji ze stron 2 oraz 3. Klient powinien złączyć listy, oraz ewentualnie usunąć powstałe w wyniku niespójności duble.
+'></a>
+
+## Header ##
+
+Each object has following header:
+
+| **Field** | **Type** | **Description** | **Default** |
+|:----------|:---------|:----------------|:------------|
+| `id`	| `Long` | Unique in type identifier |  |
+| `type` | `String` | Name of object model (type) |  |
+| `version` (optional) | `Date` | Last edit date. UNIX format. |  |
+| `deleted` (optional) | `Boolean` | Object doesn't exists | `Null`|
+
+`id` and `type` uniquely define data object in database.
+`version` is specified only where it makes any sense.
+
+Field `deleted` is used when client requests object that does not exists.
+
+## API Session ##
+
+API Session object is send whenever new session is started.
+| **type (model)**|
+|:----------------|
+| `APISession` |
+
+| **field** | **type** | **description** |
+|:----------|:---------|:----------------|
+| `photo_server` | `String` | URL of server with photos |
+| `session_key` | `String` | session key |
+| `id` | `String` | API key |
+| `category_version` | Long | ms. from 1.01.1970 |
+
+<font color='red'>
+<i>warning: API Session object doesn't have version nor id but it MUST have type (model)</i>
+</font>
+
+_**NOTE:**_
+  * [Categories objects](DatatypesCategory.md) don't have separate versions. There is one common version of whole category tree, these objects will not change often. Each time a client detects a change in `category_version` it shoult refresh whole category tree structure.
+  * To prevent clients from using inconsistent category tree server will terminate all open session when there is a non-additive change in category tree structure.

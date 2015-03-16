@@ -1,0 +1,22 @@
+# Versioning System #
+
+Każdy obiekt mapowany z bazy danych posiada pole version (numeracja od 0 lub timestamp – ms. od 1.01.1970 – decyduje serwer) typu Long oznaczające jego wersję. Każda zmiana dowolnej liczby pól danego obiektu musi skutkować zwiększeniem licznika wersji (lub zaktualizowaniem timestampa). Jedynie serwer nadaje znaczniki wersji. Zmiany po stronie klienta muszą zostać zarejestrowane po stronie serwera i to on nadaje w miarę potrzeb numer wersji i numer id.
+
+Dopuszczalne jest wysłanie żądania o dany obiekt wraz z polem version tj. wersji obiektu który aktualnie posiadamy. Serwer może implementować pamięć o różnicach w poprzednich wersjach i przesyłać tylko te pola, które się zmieniły (jeśli się zmieniły). To samo tyczy się obiektu którego wersja się nie zmieniła. W takim wypadku serwer może nie wysłać żadnej informacji o tym obiekcie. W przypadku braku pola version przy obiekcie zakłada się że klient nie ma żadnej informacji o danym obiekcie bądź chce ją w całości odświeżyć.
+
+Dane przychodzące z serwera zawsze uznawane są za najświeższe i powinny nadpisywać wszystkie wpisy w pamięci lokalnej. Nadpisywanie jest zorganizowane na poziomie pól tzn. usunięcie pola z obiektu wykonywane jest poprzez przesłanie tego pola z wartością NULL, a nie poprzez nieprzesłanie tego pola.
+
+Serwer na podstawie przesyłanych w zapytaniu informacji jak i zmian wewnętrznych każdorazowo decyduje które dane należy danemu klientowi wysłać. Zakłada się poprawne funkcjonowanie serwera.
+
+
+---
+
+
+**MOST IMPORTANT RULE**
+SERWER ZAWSZE ZWRACA NAJNOWSZE DANE. NIE MOŻNA ZAPYTAĆ SERWERA O OBIEKT STARSZEJ WERSJI. DLATEGO PRZESYŁANIE SERWEROWI WERSJI JAKIEGOŚ OBIEKTU ZAWSZE OZNACZA NIE OCZEKIWANĄ WERSJE OBIEKTU W ODPOWIEDZI, A ‘’PRZYZNANIE’’ SIĘ PRZED SERWEREM DO POSIADANIA OBIEKTU W DANEJ WERSJI.
+
+
+---
+
+
+Możliwe jest także przesłanie serwerowi zbioru nagłówków obiektów („przyznanie się do nich”). W takim wypadku serwer musi zaktualizować informacje klienta o wszystkich obiektach. Dla każdego obiektu jeśli nie pojawi się on w odpowiedzi oznacza to, że na tą chwilę jest on aktualny.

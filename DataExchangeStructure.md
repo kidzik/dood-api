@@ -1,0 +1,57 @@
+# Data Exchange Structure #
+
+Content:
+
+  * [Response format](DataExchangeStructure#Response_format.md)
+  * [Request format](DataExchangeStructure#Request_format.md)
+
+## Response format ##
+
+_example:_
+```
+{	
+   "code"         : 243,
+   "message"      : "Description",
+   "data"         : []
+}
+```
+
+
+| **Variable** | **Type** | **Description** |
+|:-------------|:---------|:----------------|
+| `code` | `Integer` | Error code. Please refer to [page about error codes](ErrorCodes.md) |
+| `message` (optional) | `String` | Error message. default language `English`. User-friendly format. |
+| `data` (optional) | `JSONArray` | Array of results. Structures of data objects. **Always up-to-date - there is no way to get archive ones.** |
+
+Data may contain not only objects requested directly by client. There might be also structures related to them. If for example client requests for Business object than he not only get Business structure, but also structures of Categories to which it belongs.
+
+Data is sent in following order:
+  1. requested data related with query (`/business/get/` gives Business objects)
+  1. requested additional data (`/business/get/?promotions=true` gives also Promotion objects)
+  1. additional data (`/business/get/?promotions=true` may also return Photo objects)
+
+## Request format ##
+
+API Request is either POST or GET HTTP request, with parameters in standard HTTP format:
+`param1=value1&param2=value2&...`
+
+Almost every request has session key:
+| **parameter** | **description** |
+|:--------------|:----------------|
+| `session_key` | Session key (must be given everywhere except `/session/start/`, `/session/login/` and `/session/register/` requests |
+
+Example of other parameters:
+
+| **parameter** | **description** |
+|:--------------|:----------------|
+| `ids` | string with ids of items that client want |
+| `has` | string with ids we already have in format `"TYPE1:id1,version1;id2;version2|TYPE2:id1,version1;id2;version2"` |
+<a href='Hidden comment: 
+|| `new` || JSONObject  z jednym obiektem który tworzymy . Obiekt powinien być pozbawiony pól id i version (te nadaje serwer) ale musi mieć pole type (typ tworzonego obiektu) ||
+|| up || JSONObject  z jednym obiektem który uaktualniamy (cały obiekt). Obiekt musi mieć wszystkie z pól id , version , type ||
+|| del || JSONObject  z jednym obiektem który usuwamy (tylko nagłówek). Obiekt musi mieć wszystkie z pól id , version , type. ||
+'></a>
+<a href='Hidden comment: 
+*A czemu nie JSONArray z headerami .. przy id i version nie bedziesz znal typu ..  rozwiazanie z headerami jest chyba bardziej generyczne .. ja mam obiekt Header ktory extenduja wszystkie inne obiekty bazodanowe*
+Jest bardziej generyczne, ale niezgodne z konwencja HTTP. Mozemy ewentualnie napisac calkiem nowy wlasny protokol na socketach zamiast na HTTP. Ale to next time ;)
+'></a>
